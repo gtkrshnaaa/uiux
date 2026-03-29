@@ -3,111 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bean & Bloom - Cozy Coffee Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bean & Bloom | The Serene Brew</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        serene: {
+                            cream: '#fdfcf8',
+                            sage: '#e2e7d6',
+                            clay: '#d4a373',
+                            ink: '#2a2a2a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="container nav-container">
-            <nav class="nav-left">
-                <ul>
-                    <li><a href="#about">Cerita</a></li>
-                    <li><a href="#specialty">Spesialti</a></li>
-                </ul>
-            </nav>
-            <div class="logo">BEAN & BLOOM</div>
-            <nav class="nav-right">
-                <ul>
-                    <li><a href="#gallery">Galeri</a></li>
-                    <li><a href="#contact">Lokasi</a></li>
-                </ul>
+<body class="bg-serene-cream text-serene-ink font-sans selection:bg-serene-clay selection:text-white">
+    <header class="fixed w-full z-50 p-8 md:p-12 flex justify-between items-start pointer-events-none">
+        <div class="pointer-events-auto">
+            <a href="#" class="text-xl font-serif italic tracking-tighter">Bean & Bloom</a>
+        </div>
+        <div class="flex flex-col items-end gap-4 pointer-events-auto">
+            <button class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink rounded-full group">
+                <span class="w-5 h-0.5 bg-white group-hover:w-6 transition-all"></span>
+                <span class="w-5 h-0.5 bg-white group-hover:w-4 transition-all"></span>
+            </button>
+            <nav class="hidden md:flex flex-col items-end text-[10px] uppercase tracking-[0.3em] gap-2 opacity-40">
+                <a href="#about" class="hover:opacity-100 transition-opacity">Our Story</a>
+                <a href="#menu" class="hover:opacity-100 transition-opacity">The Brews</a>
+                <a href="#contact" class="hover:opacity-100 transition-opacity">Find Us</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <p class="subtitle">Sejak 2018</p>
-                <h1>Temukan Ketenangan dalam Setiap Cangkir</h1>
-                <p>Ruang nyaman untuk bekerja, berbincang, atau sekadar menikmati waktu sendiri dengan kopi pilihan.</p>
-                <a href="#specialty" class="btn btn-primary">Lihat Menu</a>
+        <section class="min-h-screen flex items-center justify-center p-8 relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div class="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-serene-sage/30 rounded-full blur-[120px]"></div>
+            
+            <div class="relative z-10 text-center max-w-5xl">
+                <span class="text-[10px] uppercase tracking-[0.6em] text-serene-clay mb-8 block font-semibold">Quiet Moments / Better Coffee</span>
+                <h1 class="text-[clamp(3rem,10vw,8rem)] font-light leading-[1.1] tracking-tight mb-12">
+                    Embrace the <span class="font-serif italic text-serene-clay">Silence</span> in every sip.
+                </h1>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <p class="max-w-xs text-sm font-light leading-relaxed opacity-60 text-left border-l border-serene-ink/10 pl-6">
+                        A curated sanctuary for the mindful coffee lover. Slow roasted, heart-felt, and beautifully still.
+                    </p>
+                    <a href="#menu" class="group flex items-center gap-4 text-xs uppercase tracking-widest font-bold">
+                        Explore Menu
+                        <span class="w-10 h-10 flex items-center justify-center border border-serene-ink/10 rounded-full group-hover:bg-serene-ink group-hover:text-white transition-all duration-500">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30">
+                <span class="text-[8px] uppercase tracking-[0.5em] rotate-90 mb-4">Scroll</span>
+                <div class="w-[1px] h-20 bg-serene-ink/20"></div>
             </div>
         </section>
 
-        <section id="specialty" class="section">
-            <div class="container text-center">
-                <span class="tag">Favorit Kami</span>
-                <h2>Kopi Pilihan Hari Ini</h2>
-                <div class="specialty-grid">
-                    <div class="specialty-card">
-                        <div class="icon-placeholder">☕</div>
-                        <h3>Signature Arabica</h3>
-                        <p>Biji kopi pilihan dari pegunungan dengan catatan rasa buah dan bunga.</p>
+        <section id="about" class="py-40 px-8">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                    <div class="relative">
+                        <div class="aspect-[3/4] bg-serene-sage/50 rounded-2xl overflow-hidden relative group">
+                            <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-widest opacity-20">Artisan Space</div>
+                        </div>
+                        <!-- Floating element -->
+                        <div class="absolute -bottom-10 -right-10 bg-white p-10 rounded-2xl shadow-xl shadow-serene-clay/5 hidden md:block">
+                            <h3 class="font-serif italic text-2xl mb-2">Homegrown</h3>
+                            <p class="text-xs opacity-50 tracking-widest uppercase">Organic / Fair Trade</p>
+                        </div>
                     </div>
-                    <div class="specialty-card">
-                        <div class="icon-placeholder">🧊</div>
-                        <h3>Cold Brew Nitro</h3>
-                        <p>Kopi seduh dingin selama 18 jam dengan tekstur lembut seperti sutra.</p>
-                    </div>
-                    <div class="specialty-card">
-                        <div class="icon-placeholder">🥐</div>
-                        <h3>Handmade Pastry</h3>
-                        <p>Dibuat segar setiap pagi untuk menemani cangkir kopi Anda.</p>
+                    <div class="space-y-10">
+                        <h2 class="text-5xl md:text-7xl font-light leading-tight">Crafting <br><span class="font-serif italic">Serenity</span>.</h2>
+                        <p class="text-lg font-light leading-loose opacity-70">
+                            Kita percaya bahwa kopi bukan sekadar kafein. Ia adalah jeda. Di Bean & Bloom, setiap sudut dirancang untuk memberikan ketenangan visual, melengkapi rasa kopi yang kami kurasi dengan hati.
+                        </p>
+                        <a href="#" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all">
+                            Learn Our Ritual
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="gallery" class="bg-soft">
-            <div class="container-fluid section">
-                <h2 class="text-center">Suasana Kami</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item placeholder"></div>
-                    <div class="gallery-item placeholder"></div>
-                    <div class="gallery-item placeholder"></div>
-                    <div class="gallery-item placeholder"></div>
+        <section id="menu" class="py-40 bg-white">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-32">
+                    <span class="text-[10px] uppercase tracking-[0.5em] text-serene-clay mb-4 block">The Selection</span>
+                    <h2 class="text-6xl font-light">Essential Brews</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                    <!-- Specialty 1 -->
+                    <div class="group">
+                        <div class="aspect-square bg-serene-cream rounded-full mb-10 overflow-hidden relative transition-transform duration-700 group-hover:scale-95">
+                            <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20 group-hover:opacity-100 transition-opacity">☕</div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Cloud Latte</h3>
+                        <p class="text-sm font-light opacity-60 text-center leading-relaxed">
+                            A velvety blend of cold-frothed oat milk and our signature light roast.
+                        </p>
+                    </div>
+                    <!-- Specialty 2 -->
+                    <div class="group">
+                        <div class="aspect-square bg-serene-sage/40 rounded-full mb-10 overflow-hidden relative transition-transform duration-700 group-hover:scale-95">
+                            <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20 group-hover:opacity-100 transition-opacity">🧊</div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Still Cold Brew</h3>
+                        <p class="text-sm font-light opacity-60 text-center leading-relaxed">
+                            12-hour immersion with notes of jasmine and honey. Served still.
+                        </p>
+                    </div>
+                    <!-- Specialty 3 -->
+                    <div class="group">
+                        <div class="aspect-square bg-serene-cream rounded-full mb-10 overflow-hidden relative transition-transform duration-700 group-hover:scale-95">
+                            <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20 group-hover:opacity-100 transition-opacity">🥐</div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Daily Pastry</h3>
+                        <p class="text-sm font-light opacity-60 text-center leading-relaxed">
+                            Hand-rolled, slow-proofed, and baked with organic butter.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h2>Mampir Yuk!</h2>
-                        <p>Kami menunggumu di sudut jalan yang tenang.</p>
-                        <div class="info-item">
-                            <strong>Alamat:</strong>
-                            <p>Jl. Senja No. 12, Bandung</p>
-                        </div>
-                        <div class="info-item">
-                            <strong>Jam Operasional:</strong>
-                            <p>Setiap Hari: 08:00 - 22:00</p>
-                        </div>
+        <section id="contact" class="py-60 px-8">
+            <div class="container mx-auto bg-serene-ink text-serene-cream p-12 md:p-32 rounded-[3rem] text-center overflow-hidden relative">
+                <!-- Abstract shape -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-serene-clay/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+                
+                <h2 class="text-xs uppercase tracking-[0.8em] mb-12 opacity-40">Visit Our Sanctuary</h2>
+                <a href="#" class="text-3xl md:text-6xl font-light hover:text-serene-clay transition-colors duration-500">
+                    hello@beanandbloom.com
+                </a>
+                <div class="mt-32 grid grid-cols-1 md:grid-cols-2 gap-12 text-left border-t border-white/10 pt-12">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest opacity-40 mb-4">Location</p>
+                        <p class="text-lg font-light">Jl. Senja No. 12, <br>Bandung, Indonesia</p>
                     </div>
-                    <div class="map-placeholder">
-                        <p>Peta Lokasi</p>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest opacity-40 mb-4">Hours</p>
+                        <p class="text-lg font-light">Everyday / 08:00 — 20:00</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container text-center">
-            <div class="logo">BEAN & BLOOM</div>
-            <div class="social-links">
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
-                <a href="#">WhatsApp</a>
-            </div>
-            <p class="copyright">&copy; 2026 Bean & Bloom Cafe. Dibuat dengan cinta.</p>
-        </div>
+    <footer class="p-12 text-center text-[10px] uppercase tracking-[0.5em] opacity-40">
+        <p>&copy; 2026 Bean & Bloom. All is Still.</p>
     </footer>
 </body>
 </html>
