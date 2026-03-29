@@ -343,6 +343,19 @@
 
         // GSAP Revelations
         gsap.registerPlugin(ScrollTrigger);
+
+        // Parallax Images
+        const parallaxImages = document.querySelectorAll('.aspect-video');
+        parallaxImages.forEach(image => {
+            gsap.to(image.querySelector('div'), {
+                yPercent: 30,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: image,
+                    scrub: true
+                }
+            });
+        });
         
         // Locations Page Stagger Reveal
         gsap.from('main > section', {

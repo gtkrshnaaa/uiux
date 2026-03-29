@@ -366,6 +366,21 @@
 
         // GSAP Revelations
         gsap.registerPlugin(ScrollTrigger);
+
+        // Parallax Images
+        const parallaxImages = document.querySelectorAll('.aspect-\\[3\\/4\\], .aspect-square');
+        parallaxImages.forEach(image => {
+            gsap.to(image.querySelector('div'), {
+                yPercent: 20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: image,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        });
         
         // Hero Content Reveal
         gsap.from('.hero-reveal', {

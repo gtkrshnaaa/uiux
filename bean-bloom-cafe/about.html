@@ -303,6 +303,19 @@
 
         // GSAP Revelations
         gsap.registerPlugin(ScrollTrigger);
+
+        // Parallax Images
+        const parallaxImages = document.querySelectorAll('.aspect-\\[4\\/5\\]');
+        parallaxImages.forEach(image => {
+            gsap.to(image.querySelector('div'), {
+                yPercent: 30,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: image,
+                    scrub: true
+                }
+            });
+        });
         
         // About Page Stagger Reveal
         gsap.from('main > section', {
