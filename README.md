@@ -1,49 +1,53 @@
 # UIUX Design Collection 2026
 
-A curated collection of "Award Winning" level landing page designs for Restaurant and Cafe industries. This project focuses on high-end aesthetics, oversized typography, and minimalist layouts using Tailwind CSS Play CDN.
+A curated multi-industry collection of "Award Winning" level landing page designs. This project showcases diverse aesthetic directions—from brutalist architecture to ethereal skincare—all implemented using Tailwind CSS Play CDN.
 
 ## Project Architecture
 
-The collection is organized into a modular structure, with a central portal providing access to individual design implementations.
+The collection is organized as a modular hub, accessible through an interactive portal.
 
-- **Collection Portal (Root):** A split-screen navigation interface for seamless exploration.
-- **The Black Label (Restaurant):** A dark-themed, bold, and high-contrast design for fine dining experiences.
-- **The Serene Brew (Cafe):** A light-themed, airy, and minimalist design for modern coffee sanctuaries.
+- **Collection Hub (Root):** An interactive vertical list with hover-preview transitions.
+- **The Black Label (Restaurant):** Dark mode, bold typography, high-contrast luxury.
+- **The Serene Brew (Cafe):** Light mode, minimalist, focused on tranquility and white space.
+- **The Brutalist Frame (Architecture):** Geometric, monochromatic, and structurally honest.
+- **Vogue & Vision (Fashion):** Editorial-style lookbook with high-fashion luxury aesthetics.
+- **The Essential Dew (Skincare):** Soft, botanical, and ethereal purity.
 
 ## Tech Stack
 
 - **Framework:** Tailwind CSS (via Play CDN)
-- **Typography:** Google Fonts (Playfair Display, Outfit, Plus Jakarta Sans)
-- **Styling:** Utility-first CSS with custom tailwind configurations
-- **Responsiveness:** Fully adaptive layouts for mobile, tablet, and desktop views
+- **Typography:** Google Fonts (Playfair Display, Inter, Plus Jakarta Sans, Tenor Sans)
+- **Styling:** Utility-first CSS with custom industry-specific tailwind configurations.
+- **Responsiveness:** Fully adaptive layouts optimized for all screen sizes.
 
 ## Design Principles
 
-### Minimalist Expression
-Every element serves a purpose. We utilize generous white space and strategic placement to create a focused user experience without unnecessary clutter.
+### Aesthetic Diversity
+Each industry is treated with its own unique visual language, ensuring that the design matches the emotional and functional requirements of the brand.
 
-### Bold Typography
-The designs leverage oversized and italicized typography to create a strong visual hierarchy and a unique brand identity, reminiscent of modern design awards.
+### Award Winning Quality
+We implement design patterns commonly found in world-class showcases like Awwwards: oversized typography, asymmetrical grids, and generous white space.
 
-### Organic Color Palettes
-We use carefully selected color schemes—from high-contrast black/gold to soft sage/cream—to evoke the specific emotional response required for each industry.
+### Modern Interactions
+Utilizing smooth transitions and interactive states to create a professional and engaging user experience.
 
 ## Directory Structure
 
 ```text
 .
-├── index.html            # Collection Portal
-├── restaurant/
-│   └── index.html        # The Black Label Design
-└── cafe/
-    └── index.html        # The Serene Brew Design
+├── index.html            # Collection Hub
+├── restaurant/           # Restaurant Design
+├── cafe/                 # Cafe Design
+├── architecture/         # Architecture Design
+├── fashion/              # Fashion Design
+└── skincare/             # Skincare Design
 ```
 
 ## How to View
 
 1. Clone this repository to your local machine.
 2. Open the root `index.html` file in any modern web browser.
-3. Use the interactive split-screen to navigate between the Restaurant and Cafe designs.
+3. Hover over the list items in the hub to see previews and click to explore each design.
 
 ---
 Crafted by Gemini CLI. 2026 Edition.
