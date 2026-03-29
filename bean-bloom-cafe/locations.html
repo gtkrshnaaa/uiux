@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations | Bean & Bloom</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        serene: {
+                            cream: '#fdfcf8',
+                            sage: '#e2e7d6',
+                            clay: '#d4a373',
+                            ink: '#2a2a2a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-serene-cream text-serene-ink font-sans selection:bg-serene-clay selection:text-white">
+    <header class="fixed w-full z-50 p-8 md:p-12 flex justify-between items-start pointer-events-none">
+        <div class="pointer-events-auto">
+            <a href="index.html" class="text-xl font-serif italic tracking-tighter">Bean & Bloom</a>
+        </div>
+        <div class="flex flex-col items-end gap-4 pointer-events-auto">
+            <button class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink rounded-full group">
+                <span class="w-5 h-0.5 bg-white group-hover:w-6 transition-all"></span>
+                <span class="w-5 h-0.5 bg-white group-hover:w-4 transition-all"></span>
+            </button>
+            <nav class="hidden md:flex flex-col items-end text-[10px] uppercase tracking-[0.3em] gap-2 opacity-40">
+                <a href="about.html" class="hover:opacity-100 transition-opacity">Our Story</a>
+                <a href="menu.html" class="hover:opacity-100 transition-opacity">The Brews</a>
+                <a href="locations.html" class="hover:opacity-100 transition-opacity">Find Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-40">
+        <section class="px-8 mb-20">
+            <div class="container mx-auto">
+                <div class="max-w-4xl">
+                    <span class="text-[10px] uppercase tracking-[0.6em] text-serene-clay mb-8 block font-semibold">Our Sanctuaries</span>
+                    <h1 class="text-6xl md:text-8xl font-light leading-tight mb-12">
+                        Find Your <br><span class="font-serif italic text-serene-clay">Silence</span>.
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations List -->
+        <section class="px-8 py-20 border-t border-serene-ink/5">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
+                    
+                    <!-- Location 1 -->
+                    <div class="space-y-12">
+                        <div class="aspect-video bg-serene-sage/20 rounded-3xl overflow-hidden relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-widest opacity-20">Manhattan Flagship</div>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-serif mb-6">West Street Sanctuary</h2>
+                            <div class="grid grid-cols-2 gap-8">
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-widest opacity-40 mb-4">Address</p>
+                                    <p class="text-lg font-light">242 West Street, <br>New York, NY 10013</p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-widest opacity-40 mb-4">Hours</p>
+                                    <p class="text-lg font-light">Mon — Fri: 07:00 – 19:00 <br>Sat — Sun: 08:00 – 20:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-12">
+                                <a href="#" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all">
+                                    Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location 2 -->
+                    <div class="space-y-12">
+                        <div class="aspect-video bg-serene-sage/20 rounded-3xl overflow-hidden relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-widest opacity-20">Brooklyn Studio</div>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-serif mb-6">Greenpoint Studio</h2>
+                            <div class="grid grid-cols-2 gap-8">
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-widest opacity-40 mb-4">Address</p>
+                                    <p class="text-lg font-light">89 Franklin St, <br>Brooklyn, NY 11222</p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-widest opacity-40 mb-4">Hours</p>
+                                    <p class="text-lg font-light">Daily: 08:00 – 18:00</p>
+                                </div>
+                            </div>
+                            <div class="mt-12">
+                                <a href="#" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all">
+                                    Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="py-40 bg-white">
+            <div class="container mx-auto px-8 max-w-4xl">
+                <div class="text-center mb-24">
+                    <span class="text-[10px] uppercase tracking-[0.5em] text-serene-clay mb-4 block">Say Hello</span>
+                    <h2 class="text-5xl font-light">Get in Touch</h2>
+                </div>
+                <form class="space-y-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div class="space-y-4">
+                            <label class="text-[10px] uppercase tracking-widest opacity-40">Name</label>
+                            <input type="text" class="w-full bg-transparent border-b border-serene-ink/10 py-4 focus:outline-none focus:border-serene-clay transition-colors" placeholder="Your name">
+                        </div>
+                        <div class="space-y-4">
+                            <label class="text-[10px] uppercase tracking-widest opacity-40">Email</label>
+                            <input type="email" class="w-full bg-transparent border-b border-serene-ink/10 py-4 focus:outline-none focus:border-serene-clay transition-colors" placeholder="Your email address">
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <label class="text-[10px] uppercase tracking-widest opacity-40">Message</label>
+                        <textarea rows="4" class="w-full bg-transparent border-b border-serene-ink/10 py-4 focus:outline-none focus:border-serene-clay transition-colors resize-none" placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div class="text-center pt-12">
+                        <button type="submit" class="bg-serene-ink text-serene-cream px-12 py-5 rounded-full text-xs uppercase tracking-[0.3em] font-bold hover:bg-serene-clay transition-colors duration-500">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-12 text-center text-[10px] uppercase tracking-[0.5em] opacity-40">
+        <p>&copy; 2026 Bean & Bloom. All is Still.</p>
+    </footer>
+</body>
+</html>
