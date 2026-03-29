@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brutalist Frame | Architecture & Structure</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arch: {
+                            concrete: '#333333',
+                            gray: '#f0f0f0',
+                            accent: '#ff5f00',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"Roboto Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-arch-concrete font-sans selection:bg-arch-accent selection:text-white">
+    <!-- Grid Guide Overlay (Decorative) -->
+    <div class="fixed inset-0 pointer-events-none grid grid-cols-4 md:grid-cols-12 px-8 gap-8 opacity-[0.03]">
+        <div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div><div class="border-x border-arch-concrete"></div>
+    </div>
+
+    <header class="fixed w-full z-50 p-8 flex justify-between items-start border-b border-arch-concrete/5 bg-white/80 backdrop-blur-sm">
+        <div class="font-black text-2xl tracking-tighter uppercase leading-none">BRUTAL<br>FRAME.</div>
+        <nav class="hidden md:flex gap-16 font-mono text-xs uppercase tracking-tighter font-bold">
+            <a href="#projects" class="hover:text-arch-accent transition-colors">[ PROJECTS ]</a>
+            <a href="#about" class="hover:text-arch-accent transition-colors">[ PHILOSOPHY ]</a>
+            <a href="#contact" class="hover:text-arch-accent transition-colors">[ CONNECT ]</a>
+        </nav>
+        <div class="font-mono text-[10px] uppercase text-right opacity-40">Architectural<br>Honesty 2026</div>
+    </header>
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="min-h-screen px-8 flex flex-col justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+                <div class="md:col-span-8">
+                    <h1 class="text-[12vw] font-black leading-[0.8] tracking-tighter uppercase">Building<br><span class="text-arch-accent">Raw</span> Truth.</h1>
+                </div>
+                <div class="md:col-span-4 pb-4">
+                    <p class="font-mono text-xs uppercase leading-relaxed mb-8 opacity-60">
+                        Design that exposes the skeleton. We celebrate the raw, the unpolished, and the structural integrity of space.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 border border-arch-concrete flex items-center justify-center hover:bg-arch-accent hover:border-arch-accent hover:text-white transition-all cursor-pointer">↓</div>
+                        <div class="flex-1 border border-arch-concrete px-4 flex items-center justify-center text-[10px] font-mono uppercase font-bold tracking-tighter">View Manifesto</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section id="projects" class="py-40 px-8 border-t border-arch-concrete/10">
+            <div class="flex justify-between items-center mb-20">
+                <h2 class="font-mono text-sm font-bold uppercase tracking-tighter">/ Selected Works</h2>
+                <span class="font-mono text-[10px] opacity-40">001 — 004</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-1 px-0 md:px-0">
+                <!-- Project 1 -->
+                <div class="group relative bg-arch-gray aspect-[4/5] overflow-hidden">
+                    <div class="absolute inset-0 bg-arch-concrete/0 group-hover:bg-arch-concrete/40 transition-colors duration-700 z-10"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-20">Concrete Oasis</div>
+                    <div class="absolute bottom-8 left-8 z-20 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
+                        <h3 class="text-white text-3xl font-black uppercase italic">The Monolith</h3>
+                        <p class="text-white/60 font-mono text-[10px] mt-2">Residential / Tokyo, JP</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group relative bg-white border border-arch-concrete/5 aspect-[4/5] overflow-hidden">
+                    <div class="absolute inset-0 bg-arch-accent/0 group-hover:bg-arch-accent/20 transition-colors duration-700 z-10"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-10 italic font-black">Structure / Void</div>
+                    <div class="absolute bottom-8 left-8 z-20 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
+                        <h3 class="text-arch-concrete text-3xl font-black uppercase">Urban Grid</h3>
+                        <p class="text-arch-concrete/60 font-mono text-[10px] mt-2">Office / Berlin, DE</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy -->
+        <section id="about" class="py-60 px-8 bg-arch-concrete text-white">
+            <div class="max-w-4xl">
+                <span class="font-mono text-arch-accent text-[10px] uppercase font-bold mb-12 block tracking-widest">Philosophy</span>
+                <p class="text-3xl md:text-6xl font-light leading-[1.1] mb-20 tracking-tighter">
+                    "We believe architecture should be an <span class="italic font-serif">honest</span> reflection of its purpose and material."
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 font-mono text-[10px] uppercase tracking-tighter opacity-50">
+                    <div>
+                        <span class="text-arch-accent font-bold mb-4 block">01/ MATERIALITY</span>
+                        Concrete, Steel, Glass. No layers, no lies. Just the raw essence of form.
+                    </div>
+                    <div>
+                        <span class="text-arch-accent font-bold mb-4 block">02/ FUNCTION</span>
+                        Spaces designed to be lived in, not just looked at. Human-centric brutalism.
+                    </div>
+                    <div>
+                        <span class="text-arch-accent font-bold mb-4 block">03/ SILENCE</span>
+                        Reducing the noise through architectural discipline and geometric order.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Connect -->
+        <section id="contact" class="py-40 px-8">
+            <div class="border-y border-arch-concrete py-32 text-center">
+                <h2 class="text-[8vw] font-black uppercase tracking-tighter leading-none mb-12 italic">Collaborate.</h2>
+                <a href="mailto:studio@brutalframe.com" class="font-mono text-xl md:text-3xl hover:text-arch-accent transition-colors decoration-arch-accent underline decoration-4 underline-offset-8">
+                    studio@brutalframe.com
+                </a>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center mt-12 font-mono text-[10px] uppercase tracking-tighter opacity-40">
+                <span>London / Dubai / Singapore</span>
+                <span>© 2026 Brutal Frame Studio</span>
+                <div class="flex gap-8 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-arch-accent">Instagram</a>
+                    <a href="#" class="hover:text-arch-accent">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
