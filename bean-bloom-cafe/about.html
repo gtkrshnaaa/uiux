@@ -106,10 +106,10 @@
     <div class="custom-cursor-follower hidden md:block"></div>
     <header class="fixed w-full z-50 p-6 md:p-12 flex justify-between items-start pointer-events-none">
         <div class="pointer-events-auto">
-            <a href="index.html" class="text-xl font-serif italic tracking-tighter">Bean & Bloom</a>
+            <a href="index.html" class="text-xl font-serif italic tracking-tighter magnetic-btn inline-block">Bean & Bloom</a>
         </div>
         <div class="flex flex-col items-end gap-4 pointer-events-auto">
-            <button id="menu-toggle" class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink rounded-full group relative z-[60]">
+            <button id="menu-toggle" class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink rounded-full group relative z-[60] magnetic-btn">
                 <span id="line1" class="w-5 h-0.5 bg-white group-hover:w-6 transition-all"></span>
                 <span id="line2" class="w-5 h-0.5 bg-white group-hover:w-4 transition-all"></span>
             </button>
@@ -265,13 +265,39 @@
         animateCursor();
 
         // Cursor hover effects
-        const interactiveElements = document.querySelectorAll('a, button, .group');
+        const interactiveElements = document.querySelectorAll('a, button, .group, .magnetic-btn');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 document.body.classList.add('cursor-active');
             });
             el.addEventListener('mouseleave', () => {
                 document.body.classList.remove('cursor-active');
+            });
+        });
+
+        // Magnetic Buttons Logic
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                gsap.to(btn, {
+                    x: x * 0.3,
+                    y: y * 0.3,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.6,
+                    ease: "elastic.out(1, 0.3)"
+                });
             });
         });
 

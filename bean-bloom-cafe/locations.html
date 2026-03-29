@@ -106,10 +106,10 @@
     <div class="custom-cursor-follower hidden md:block"></div>
     <header class="fixed w-full z-50 p-6 md:p-12 flex justify-between items-start pointer-events-none">
         <div class="pointer-events-auto">
-            <a href="index.html" class="text-xl font-serif italic tracking-tighter">Bean & Bloom</a>
+            <a href="index.html" class="text-xl font-serif italic tracking-tighter magnetic-btn inline-block">Bean & Bloom</a>
         </div>
         <div class="flex flex-col items-end gap-4 pointer-events-auto">
-            <button id="menu-toggle" class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink rounded-full group relative z-[60]">
+            <button id="menu-toggle" class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink rounded-full group relative z-[60] magnetic-btn">
                 <span id="line1" class="w-5 h-0.5 bg-white group-hover:w-6 transition-all"></span>
                 <span id="line2" class="w-5 h-0.5 bg-white group-hover:w-4 transition-all"></span>
             </button>
@@ -189,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="mt-12">
-                                <a href="#" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all">
+                                <a href="#" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all magnetic-btn px-4 py-2">
                                     Get Directions
                                 </a>
                             </div>
@@ -214,7 +214,7 @@
                                 </div>
                             </div>
                             <div class="mt-12">
-                                <a href="#" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all">
+                                <a href="#" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all magnetic-btn px-4 py-2">
                                     Get Directions
                                 </a>
                             </div>
@@ -248,7 +248,7 @@
                         <textarea rows="4" class="w-full bg-transparent border-b border-serene-ink/10 py-4 focus:outline-none focus:border-serene-clay transition-colors resize-none" placeholder="What's on your mind?"></textarea>
                     </div>
                     <div class="text-center pt-12">
-                        <button type="submit" class="bg-serene-ink text-serene-cream px-12 py-5 rounded-full text-xs uppercase tracking-[0.3em] font-bold hover:bg-serene-clay transition-colors duration-500">
+                        <button type="submit" class="bg-serene-ink text-serene-cream px-12 py-5 rounded-full text-xs uppercase tracking-[0.3em] font-bold hover:bg-serene-clay transition-colors duration-500 magnetic-btn">
                             Send Message
                         </button>
                     </div>
@@ -305,13 +305,39 @@
         animateCursor();
 
         // Cursor hover effects
-        const interactiveElements = document.querySelectorAll('a, button, .group, input, textarea');
+        const interactiveElements = document.querySelectorAll('a, button, .group, input, textarea, .magnetic-btn');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 document.body.classList.add('cursor-active');
             });
             el.addEventListener('mouseleave', () => {
                 document.body.classList.remove('cursor-active');
+            });
+        });
+
+        // Magnetic Buttons Logic
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                gsap.to(btn, {
+                    x: x * 0.3,
+                    y: y * 0.3,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.6,
+                    ease: "elastic.out(1, 0.3)"
+                });
             });
         });
 
