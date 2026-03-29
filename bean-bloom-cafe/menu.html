@@ -30,80 +30,73 @@
         }
     </script>
     <style>
-        /* Grainy Texture */
-        .grain {
-            position: fixed;
-            top: -150%;
-            left: -150%;
-            width: 300%;
-            height: 300%;
-            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-            opacity: 0.04;
-            pointer-events: none;
-            z-index: 9999;
-            animation: grain 8s steps(10) infinite;
-        }
-        @keyframes grain {
-            0%, 100% { transform:translate(0, 0); }
-            10% { transform:translate(-5%, -10%); }
-            20% { transform:translate(-15%, 5%); }
-            30% { transform:translate(7%, -25%); }
-            40% { transform:translate(-5%, 25%); }
-            50% { transform:translate(-15%, 10%); }
-            60% { transform:translate(15%, 0%); }
-            70% { transform:translate(0%, 15%); }
-            80% { transform:translate(3%, 35%); }
-            90% { transform:translate(-10%, 10%); }
-        }
-
-        /* Custom Cursor */
-        .custom-cursor {
-            width: 8px;
-            height: 8px;
-            background: #2a2a2a;
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 10000;
-            transition: transform 0.1s ease-out, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
-        }
-        .custom-cursor-follower {
-            width: 30px;
-            height: 30px;
-            border: 1px solid rgba(42, 42, 42, 0.2);
-            border-radius: 50%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.15s ease-out;
-        }
-        body:hover .custom-cursor,
-        body:hover .custom-cursor-follower {
-            opacity: 1;
-        }
-        .cursor-active .custom-cursor {
-            transform: scale(4);
-            background: rgba(42, 42, 42, 0.1);
-            backdrop-filter: blur(2px);
-        }
+        /* ... existing styles ... */
         
-        /* Smooth Scroll behavior */
-        html.lenis {
-            height: auto;
+        /* Modal Styles */
+        #menu-modal {
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
-        .lenis-smooth {
-            scroll-behavior: auto !important;
+        #menu-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content-anim {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease;
+        }
+        #menu-modal.active .modal-content-anim {
+            transform: translateY(0);
+            opacity: 1;
         }
     </style>
 </head>
 <body class="bg-serene-cream text-serene-ink font-sans selection:bg-serene-clay selection:text-white overflow-x-hidden">
+    <!-- ... grain and cursors ... -->
     <div class="grain"></div>
     <div class="custom-cursor hidden md:block"></div>
     <div class="custom-cursor-follower hidden md:block"></div>
+
+    <!-- Menu Detail Modal -->
+    <div id="menu-modal" class="fixed inset-0 z-[100] invisible opacity-0 flex items-center justify-center p-4 md:p-8">
+        <div class="absolute inset-0 bg-serene-ink/40 backdrop-blur-md" id="modal-overlay"></div>
+        <div class="bg-serene-cream w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2rem] relative z-10 modal-content-anim shadow-2xl">
+            <button id="close-modal" class="absolute top-8 right-8 w-12 h-12 flex items-center justify-center bg-serene-ink text-white rounded-full hover:bg-serene-clay transition-colors z-20">✕</button>
+            
+            <div class="p-8 md:p-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                    <div class="aspect-square bg-serene-sage/20 rounded-2xl flex items-center justify-center text-6xl" id="modal-icon">☕</div>
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.5em] text-serene-clay mb-2 block font-semibold" id="modal-category">Signature Brew</span>
+                            <h2 class="text-4xl md:text-5xl font-serif italic" id="modal-title">Cloud Latte</h2>
+                        </div>
+                        <p class="text-lg font-light leading-relaxed opacity-70" id="modal-description">A velvety blend of cold-frothed oat milk and our signature light roast.</p>
+                        
+                        <div class="grid grid-cols-2 gap-8 border-t border-serene-ink/5 pt-8">
+                            <div>
+                                <h4 class="text-[10px] uppercase tracking-widest opacity-40 mb-2">Origin</h4>
+                                <p class="text-sm font-medium" id="modal-origin">Ethiopia / Yirgacheffe</p>
+                            </div>
+                            <div>
+                                <h4 class="text-[10px] uppercase tracking-widest opacity-40 mb-2">Tasting Notes</h4>
+                                <p class="text-sm font-medium" id="modal-notes">Floral, Citrus, Honey</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-[10px] uppercase tracking-widest opacity-40">Brewing Ritual</h4>
+                            <p class="text-sm font-light leading-relaxed opacity-60" id="modal-ritual">Steeped for 12 hours at precise temperatures to extract the subtle floral notes without any bitterness.</p>
+                        </div>
+
+                        <div class="pt-8">
+                            <span class="text-2xl font-light" id="modal-price">$6.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="fixed w-full z-50 p-6 md:p-12 flex justify-between items-start pointer-events-none">
         <div class="pointer-events-auto">
             <a href="index.html" class="text-xl font-serif italic tracking-tighter">Bean & Bloom</a>
@@ -178,21 +171,45 @@
                     <div>
                         <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">Signature Brews</h2>
                         <div class="space-y-12">
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item" 
+                                 data-category="Signature Brew"
+                                 data-title="Cloud Latte"
+                                 data-price="$6.5"
+                                 data-desc="Velvety frothed oat milk, signature light roast espresso, vanilla bean."
+                                 data-origin="Ethiopia / Guji"
+                                 data-notes="Vanilla, Stone Fruit, Jasmine"
+                                 data-ritual="Hand-whisked oat milk is combined with a double shot of our lightest roast to create a cloud-like texture."
+                                 data-icon="☕">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Cloud Latte</h3>
                                     <p class="text-sm font-light opacity-60">Velvety frothed oat milk, signature light roast espresso, vanilla bean.</p>
                                 </div>
                                 <span class="text-lg font-light">$6.5</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Signature Brew"
+                                 data-title="Still Cold Brew"
+                                 data-price="$5.5"
+                                 data-desc="12-hour immersion, notes of jasmine and honey, served still."
+                                 data-origin="Colombia / Huila"
+                                 data-notes="Honey, Jasmine, Cocoa"
+                                 data-ritual="Brewed for 12 hours in small batches to ensure a clean, tea-like clarity."
+                                 data-icon="🧊">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Still Cold Brew</h3>
                                     <p class="text-sm font-light opacity-60">12-hour immersion, notes of jasmine and honey, served still.</p>
                                 </div>
                                 <span class="text-lg font-light">$5.5</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Signature Brew"
+                                 data-title="Bloom Espresso"
+                                 data-price="$4.0"
+                                 data-desc="Single origin, bright citrus notes, floral finish."
+                                 data-origin="Kenya / Nyeri"
+                                 data-notes="Hibiscus, Grapefruit, Blackcurrant"
+                                 data-ritual="Pulled at a precise 1:2.2 ratio for maximum floral expression."
+                                 data-icon="🌸">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Bloom Espresso</h3>
                                     <p class="text-sm font-light opacity-60">Single origin, bright citrus notes, floral finish.</p>
@@ -206,21 +223,45 @@
                     <div>
                         <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">The Classics</h2>
                         <div class="space-y-12">
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="The Classics"
+                                 data-title="Cappuccino"
+                                 data-price="$5.0"
+                                 data-desc="Equal parts espresso, steamed milk, and airy foam."
+                                 data-origin="Brazil / Cerrado"
+                                 data-notes="Chocolate, Roasted Nut, Caramel"
+                                 data-ritual="Classic 1:1:1 ratio, steamed at 65°C for the perfect micro-foam sweetness."
+                                 data-icon="☕">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Cappuccino</h3>
                                     <p class="text-sm font-light opacity-60">Equal parts espresso, steamed milk, and airy foam.</p>
                                 </div>
                                 <span class="text-lg font-light">$5.0</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="The Classics"
+                                 data-title="Flat White"
+                                 data-price="$5.0"
+                                 data-desc="Double shot espresso, thin layer of micro-foam."
+                                 data-origin="Guatemala / Antigua"
+                                 data-notes="Spice, Cocoa, Dried Fruit"
+                                 data-ritual="A shorter pull of espresso combined with velvety micro-foam for a stronger coffee profile."
+                                 data-icon="🥛">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Flat White</h3>
                                     <p class="text-sm font-light opacity-60">Double shot espresso, thin layer of micro-foam.</p>
                                 </div>
                                 <span class="text-lg font-light">$5.0</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="The Classics"
+                                 data-title="Pour Over"
+                                 data-price="$6.0"
+                                 data-desc="Rotating single origin beans, brewed for clarity."
+                                 data-origin="Rotating Origin"
+                                 data-notes="Varies by Season"
+                                 data-ritual="Brewed using V60 technique to highlight the complex acidity and clean finish of the bean."
+                                 data-icon="⚗️">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Pour Over</h3>
                                     <p class="text-sm font-light opacity-60">Rotating single origin beans, brewed for clarity.</p>
@@ -234,21 +275,45 @@
                     <div>
                         <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">Non-Coffee</h2>
                         <div class="space-y-12">
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Non-Coffee"
+                                 data-title="Ceremonial Matcha"
+                                 data-price="$6.5"
+                                 data-desc="Stone-ground Uji matcha, whisked with oat milk."
+                                 data-origin="Uji, Japan"
+                                 data-notes="Umami, Grassy, Sweet Cream"
+                                 data-ritual="Whisked using a traditional bamboo chasen to create a smooth, vibrant green froth."
+                                 data-icon="🍵">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Ceremonial Matcha</h3>
                                     <p class="text-sm font-light opacity-60">Stone-ground Uji matcha, whisked with oat milk.</p>
                                 </div>
                                 <span class="text-lg font-light">$6.5</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Non-Coffee"
+                                 data-title="Golden Latte"
+                                 data-price="$6.0"
+                                 data-desc="Turmeric, ginger, black pepper, honey, almond milk."
+                                 data-origin="Organic Spice Blend"
+                                 data-notes="Spicy, Earthy, Warming"
+                                 data-ritual="A warming blend of anti-inflammatory spices, steamed with creamy almond milk."
+                                 data-icon="✨">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Golden Latte</h3>
                                     <p class="text-sm font-light opacity-60">Turmeric, ginger, black pepper, honey, almond milk.</p>
                                 </div>
                                 <span class="text-lg font-light">$6.0</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Non-Coffee"
+                                 data-title="Wildflower Tea"
+                                 data-price="$5.0"
+                                 data-desc="A soothing blend of chamomile, lavender, and rose."
+                                 data-origin="Local Herbal Farm"
+                                 data-notes="Floral, Apple, Honey"
+                                 data-ritual="Steeped at 90°C for 4 minutes to release the delicate floral aromatics."
+                                 data-icon="🪻">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Wildflower Tea</h3>
                                     <p class="text-sm font-light opacity-60">A soothing blend of chamomile, lavender, and rose.</p>
@@ -262,21 +327,45 @@
                     <div>
                         <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">Bakery & Brunch</h2>
                         <div class="space-y-12">
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Bakery & Brunch"
+                                 data-title="Daily Croissant"
+                                 data-price="$4.5"
+                                 data-desc="Laminated with organic butter, baked fresh every morning."
+                                 data-origin="Hand-crafted in house"
+                                 data-notes="Buttery, Flaky, Golden"
+                                 data-ritual="72-hour lamination process using high-fat French butter for maximum flakiness."
+                                 data-icon="🥐">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Daily Croissant</h3>
                                     <p class="text-sm font-light opacity-60">Laminated with organic butter, baked fresh every morning.</p>
                                 </div>
                                 <span class="text-lg font-light">$4.5</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Bakery & Brunch"
+                                 data-title="Avocado Toast"
+                                 data-price="$12.0"
+                                 data-desc="Sourdough, heirloom tomatoes, radish, chili flakes."
+                                 data-origin="Local Artisan Bakery"
+                                 data-notes="Zesty, Creamy, Tangy"
+                                 data-ritual="Toasted house-made sourdough topped with crushed Hass avocados and lemon-infused olive oil."
+                                 data-icon="🥑">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Avocado Toast</h3>
                                     <p class="text-sm font-light opacity-60">Sourdough, heirloom tomatoes, radish, chili flakes.</p>
                                 </div>
                                 <span class="text-lg font-light">$12.0</span>
                             </div>
-                            <div class="flex justify-between items-start group">
+                            <div class="flex justify-between items-start group cursor-pointer menu-item"
+                                 data-category="Bakery & Brunch"
+                                 data-title="Truffle Scrambled"
+                                 data-price="$15.0"
+                                 data-desc="Creamy eggs, shaved truffle, sourdough toast."
+                                 data-origin="Premium Italian Truffles"
+                                 data-notes="Earthy, Umami, Rich"
+                                 data-ritual="Slow-scrambled organic eggs finished with fresh black truffle shavings and sea salt."
+                                 data-icon="🍳">
                                 <div class="max-w-xs">
                                     <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Truffle Scrambled</h3>
                                     <p class="text-sm font-light opacity-60">Creamy eggs, shaved truffle, sourdough toast.</p>
@@ -350,7 +439,7 @@
         animateCursor();
 
         // Cursor hover effects
-        const interactiveElements = document.querySelectorAll('a, button, .group');
+        const interactiveElements = document.querySelectorAll('a, button, .group, .menu-item');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 document.body.classList.add('cursor-active');
@@ -358,6 +447,48 @@
             el.addEventListener('mouseleave', () => {
                 document.body.classList.remove('cursor-active');
             });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('menu-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const closeModal = document.getElementById('close-modal');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        const mIcon = document.getElementById('modal-icon');
+        const mTitle = document.getElementById('modal-title');
+        const mCategory = document.getElementById('modal-category');
+        const mDesc = document.getElementById('modal-description');
+        const mOrigin = document.getElementById('modal-origin');
+        const mNotes = document.getElementById('modal-notes');
+        const mRitual = document.getElementById('modal-ritual');
+        const mPrice = document.getElementById('modal-price');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mIcon.textContent = item.dataset.icon;
+                mTitle.textContent = item.dataset.title;
+                mCategory.textContent = item.dataset.category;
+                mDesc.textContent = item.dataset.desc;
+                mOrigin.textContent = item.dataset.origin;
+                mNotes.textContent = item.dataset.notes;
+                mRitual.textContent = item.dataset.ritual;
+                mPrice.textContent = item.dataset.price;
+                
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeMenuModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        closeModal.addEventListener('click', closeMenuModal);
+        modalOverlay.addEventListener('click', closeMenuModal);
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMenuModal();
         });
 
         // GSAP Revelations
