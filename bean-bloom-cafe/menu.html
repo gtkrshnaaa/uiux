@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Bean & Bloom</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        serene: {
+                            cream: '#fdfcf8',
+                            sage: '#e2e7d6',
+                            clay: '#d4a373',
+                            ink: '#2a2a2a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-serene-cream text-serene-ink font-sans selection:bg-serene-clay selection:text-white">
+    <header class="fixed w-full z-50 p-8 md:p-12 flex justify-between items-start pointer-events-none">
+        <div class="pointer-events-auto">
+            <a href="index.html" class="text-xl font-serif italic tracking-tighter">Bean & Bloom</a>
+        </div>
+        <div class="flex flex-col items-end gap-4 pointer-events-auto">
+            <button class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink rounded-full group">
+                <span class="w-5 h-0.5 bg-white group-hover:w-6 transition-all"></span>
+                <span class="w-5 h-0.5 bg-white group-hover:w-4 transition-all"></span>
+            </button>
+            <nav class="hidden md:flex flex-col items-end text-[10px] uppercase tracking-[0.3em] gap-2 opacity-40">
+                <a href="about.html" class="hover:opacity-100 transition-opacity">Our Story</a>
+                <a href="menu.html" class="hover:opacity-100 transition-opacity">The Brews</a>
+                <a href="locations.html" class="hover:opacity-100 transition-opacity">Find Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-40 pb-20">
+        <section class="px-8 mb-32">
+            <div class="container mx-auto">
+                <div class="max-w-4xl">
+                    <span class="text-[10px] uppercase tracking-[0.6em] text-serene-clay mb-8 block font-semibold">The Selection</span>
+                    <h1 class="text-6xl md:text-8xl font-light leading-tight mb-8">
+                        The <span class="font-serif italic text-serene-clay">Ritual</span> <br> of Tasting.
+                    </h1>
+                    <p class="max-w-md text-lg font-light leading-relaxed opacity-60">
+                        Explore our curated selection of mindful brews and artisan treats, prepared with precision and heart.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Categories -->
+        <section class="px-8">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-32">
+                    
+                    <!-- Signature Brews -->
+                    <div>
+                        <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">Signature Brews</h2>
+                        <div class="space-y-12">
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Cloud Latte</h3>
+                                    <p class="text-sm font-light opacity-60">Velvety frothed oat milk, signature light roast espresso, vanilla bean.</p>
+                                </div>
+                                <span class="text-lg font-light">$6.5</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Still Cold Brew</h3>
+                                    <p class="text-sm font-light opacity-60">12-hour immersion, notes of jasmine and honey, served still.</p>
+                                </div>
+                                <span class="text-lg font-light">$5.5</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Bloom Espresso</h3>
+                                    <p class="text-sm font-light opacity-60">Single origin, bright citrus notes, floral finish.</p>
+                                </div>
+                                <span class="text-lg font-light">$4.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Classics -->
+                    <div>
+                        <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">The Classics</h2>
+                        <div class="space-y-12">
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Cappuccino</h3>
+                                    <p class="text-sm font-light opacity-60">Equal parts espresso, steamed milk, and airy foam.</p>
+                                </div>
+                                <span class="text-lg font-light">$5.0</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Flat White</h3>
+                                    <p class="text-sm font-light opacity-60">Double shot espresso, thin layer of micro-foam.</p>
+                                </div>
+                                <span class="text-lg font-light">$5.0</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Pour Over</h3>
+                                    <p class="text-sm font-light opacity-60">Rotating single origin beans, brewed for clarity.</p>
+                                </div>
+                                <span class="text-lg font-light">$6.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Non-Coffee -->
+                    <div>
+                        <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">Non-Coffee</h2>
+                        <div class="space-y-12">
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Ceremonial Matcha</h3>
+                                    <p class="text-sm font-light opacity-60">Stone-ground Uji matcha, whisked with oat milk.</p>
+                                </div>
+                                <span class="text-lg font-light">$6.5</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Golden Latte</h3>
+                                    <p class="text-sm font-light opacity-60">Turmeric, ginger, black pepper, honey, almond milk.</p>
+                                </div>
+                                <span class="text-lg font-light">$6.0</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Wildflower Tea</h3>
+                                    <p class="text-sm font-light opacity-60">A soothing blend of chamomile, lavender, and rose.</p>
+                                </div>
+                                <span class="text-lg font-light">$5.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bakery & Food -->
+                    <div>
+                        <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-12 border-b border-serene-clay/20 pb-4">Bakery & Brunch</h2>
+                        <div class="space-y-12">
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Daily Croissant</h3>
+                                    <p class="text-sm font-light opacity-60">Laminated with organic butter, baked fresh every morning.</p>
+                                </div>
+                                <span class="text-lg font-light">$4.5</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Avocado Toast</h3>
+                                    <p class="text-sm font-light opacity-60">Sourdough, heirloom tomatoes, radish, chili flakes.</p>
+                                </div>
+                                <span class="text-lg font-light">$12.0</span>
+                            </div>
+                            <div class="flex justify-between items-start group">
+                                <div class="max-w-xs">
+                                    <h3 class="text-xl font-serif mb-2 group-hover:text-serene-clay transition-colors">Truffle Scrambled</h3>
+                                    <p class="text-sm font-light opacity-60">Creamy eggs, shaved truffle, sourdough toast.</p>
+                                </div>
+                                <span class="text-lg font-light">$15.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section CTA -->
+        <section class="py-40 px-8">
+            <div class="container mx-auto text-center border-t border-serene-ink/5 pt-40">
+                <span class="text-[10px] uppercase tracking-[0.5em] text-serene-clay mb-8 block">Ready for a sip?</span>
+                <h2 class="text-4xl md:text-6xl font-light mb-12">Visit Our Sanctuary</h2>
+                <a href="locations.html" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all">
+                    Find Nearest Location
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-12 text-center text-[10px] uppercase tracking-[0.5em] opacity-40">
+        <p>&copy; 2026 Bean & Bloom. All is Still.</p>
+    </footer>
+</body>
+</html>
