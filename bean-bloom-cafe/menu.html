@@ -29,8 +29,81 @@
             }
         }
     </script>
+    <style>
+        /* Grainy Texture */
+        .grain {
+            position: fixed;
+            top: -150%;
+            left: -150%;
+            width: 300%;
+            height: 300%;
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+            animation: grain 8s steps(10) infinite;
+        }
+        @keyframes grain {
+            0%, 100% { transform:translate(0, 0); }
+            10% { transform:translate(-5%, -10%); }
+            20% { transform:translate(-15%, 5%); }
+            30% { transform:translate(7%, -25%); }
+            40% { transform:translate(-5%, 25%); }
+            50% { transform:translate(-15%, 10%); }
+            60% { transform:translate(15%, 0%); }
+            70% { transform:translate(0%, 15%); }
+            80% { transform:translate(3%, 35%); }
+            90% { transform:translate(-10%, 10%); }
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background: #2a2a2a;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.1s ease-out, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+        }
+        .custom-cursor-follower {
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgba(42, 42, 42, 0.2);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease-out;
+        }
+        body:hover .custom-cursor,
+        body:hover .custom-cursor-follower {
+            opacity: 1;
+        }
+        .cursor-active .custom-cursor {
+            transform: scale(4);
+            background: rgba(42, 42, 42, 0.1);
+            backdrop-filter: blur(2px);
+        }
+        
+        /* Smooth Scroll behavior */
+        html.lenis {
+            height: auto;
+        }
+        .lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+    </style>
 </head>
-<body class="bg-serene-cream text-serene-ink font-sans selection:bg-serene-clay selection:text-white">
+<body class="bg-serene-cream text-serene-ink font-sans selection:bg-serene-clay selection:text-white overflow-x-hidden">
+    <div class="grain"></div>
+    <div class="custom-cursor hidden md:block"></div>
+    <div class="custom-cursor-follower hidden md:block"></div>
     <header class="fixed w-full z-50 p-6 md:p-12 flex justify-between items-start pointer-events-none">
         <div class="pointer-events-auto">
             <a href="index.html" class="text-xl font-serif italic tracking-tighter">Bean & Bloom</a>
@@ -232,5 +305,88 @@
     <footer class="p-12 text-center text-[10px] uppercase tracking-[0.5em] opacity-40">
         <p>&copy; 2026 Bean & Bloom. All is Still.</p>
     </footer>
+    <!-- High-end Interactions -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Smooth Scroll (Lenis)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.custom-cursor');
+        const follower = document.querySelector('.custom-cursor-follower');
+        let mouseX = 0, mouseY = 0;
+        let ballX = 0, ballY = 0;
+        let followerX = 0, followerY = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            ballX += (mouseX - ballX) * 0.2;
+            ballY += (mouseY - ballY) * 0.2;
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+
+            cursor.style.transform = `translate3d(${ballX - 4}px, ${ballY - 4}px, 0)`;
+            follower.style.transform = `translate3d(${followerX - 15}px, ${followerY - 15}px, 0)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor hover effects
+        const interactiveElements = document.querySelectorAll('a, button, .group');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-active');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-active');
+            });
+        });
+
+        // GSAP Revelations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Menu Page Stagger Reveal
+        gsap.from('main > section', {
+            y: 60,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.3,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        // Scroll Trigger Reveal for menu items
+        const menuItems = document.querySelectorAll('.space-y-12 > div');
+        menuItems.forEach(item => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 90%",
+                },
+                x: -30,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+    </script>
 </body>
 </html>
