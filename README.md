@@ -7,11 +7,11 @@ A curated multi-industry collection of "Award Winning" level landing page design
 The collection is organized as a modular hub, accessible through an interactive portal.
 
 - **Collection Hub (Root):** An interactive vertical list with hover-preview transitions.
-- **SavoriaRestaurant:** Dark mode, bold typography, high-contrast luxury dining.
-- **BeanBloomCafe:** Light mode, minimalist, focused on tranquility and white space coffee culture.
-- **BrutalFrameArchitecture:** Geometric, monochromatic, and structurally honest architecture.
-- **VogueVisionFashion:** Editorial-style lookbook with high-fashion luxury fashion aesthetics.
-- **EssentialDewSkincare:** Soft, botanical, and ethereal purity skincare rituals.
+- **savoria-restaurant:** Dark mode, bold typography, high-contrast luxury dining.
+- **bean-bloom-cafe:** Light mode, minimalist, focused on tranquility and white space coffee culture.
+- **brutal-frame-architecture:** Geometric, monochromatic, and structurally honest architecture.
+- **vogue-vision-fashion:** Editorial-style lookbook with high-fashion luxury fashion aesthetics.
+- **essential-dew-skincare:** Soft, botanical, and ethereal purity skincare rituals.
 
 ## Tech Stack
 
@@ -36,11 +36,11 @@ Utilizing smooth transitions and interactive states to create a professional and
 ```text
 .
 ├── index.html                      # Collection Hub
-├── SavoriaRestaurant/               # Restaurant Design
-├── BeanBloomCafe/                   # Cafe Design
-├── BrutalFrameArchitecture/         # Architecture Design
-├── VogueVisionFashion/              # Fashion Design
-└── EssentialDewSkincare/            # Skincare Design
+├── savoria-restaurant/              # Restaurant Design
+├── bean-bloom-cafe/                 # Cafe Design
+├── brutal-frame-architecture/       # Architecture Design
+├── vogue-vision-fashion/            # Fashion Design
+└── essential-dew-skincare/          # Skincare Design
 ```
 
 ## How to View
