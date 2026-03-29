@@ -3,98 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savoria - Minimalist Fine Dining</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Savoria Black Label | Award Winning Dining</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#c5a059',
+                            black: '#0a0a0a',
+                            white: '#f5f5f5',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .outline-text {
+            -webkit-text-stroke: 1px rgba(197, 160, 89, 0.5);
+            color: transparent;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">SAVORIA</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#" class="btn btn-primary">Pesan Meja</a>
+<body class="bg-brand-black text-brand-white font-sans selection:bg-brand-gold selection:text-brand-black">
+    <!-- Overlay Grain Effect -->
+    <div class="fixed inset-0 pointer-events-none opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] z-50"></div>
+
+    <header class="fixed w-full z-40 py-10 px-8 flex justify-between items-center mix-blend-difference">
+        <a href="#" class="text-xs uppercase tracking-[0.4em] font-bold">SAVORIA™</a>
+        <nav class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.3em]">
+            <a href="#about" class="hover:text-brand-gold transition-colors">Origins</a>
+            <a href="#menu" class="hover:text-brand-gold transition-colors">Manifesto</a>
+            <a href="#contact" class="hover:text-brand-gold transition-colors">Reserve</a>
         </nav>
+        <button class="text-xs uppercase tracking-[0.4em] font-bold">Menu</button>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <h1>Seni dalam Setiap Suapan</h1>
-                <p>Nikmati pengalaman kuliner tak terlupakan dengan sentuhan minimalis dan bahan organik terbaik.</p>
-                <a href="#menu" class="btn btn-outline">Eksplorasi Menu</a>
-            </div>
-        </section>
-
-        <section id="about" class="container section">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2>Tentang Kami</h2>
-                    <p>Savoria hadir untuk membawa kemurnian rasa ke atas meja Anda. Dengan konsep fine dining yang santai namun elegan, kami mengutamakan kualitas bahan dari petani lokal.</p>
-                </div>
-                <div class="about-image placeholder"></div>
-            </div>
-        </section>
-
-        <section id="menu" class="section bg-light">
-            <div class="container">
-                <h2 class="text-center">Menu Unggulan</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-img placeholder"></div>
-                        <h3>Truffle Risotto</h3>
-                        <p>Nasi arborio krim dengan jamur truffle hitam segar.</p>
-                        <span class="price">Rp 185.000</span>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-img placeholder"></div>
-                        <h3>Wagyu Steak</h3>
-                        <p>Daging wagyu A5 panggang sempurna dengan saus rahasia.</p>
-                        <span class="price">Rp 450.000</span>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-img placeholder"></div>
-                        <h3>Salmon Miso</h3>
-                        <p>Salmon panggang dengan kerak miso dan sayuran musiman.</p>
-                        <span class="price">Rp 210.000</span>
-                    </div>
+        <section class="h-[120vh] flex flex-col justify-center relative overflow-hidden px-8">
+            <div class="relative z-10">
+                <p class="text-[10px] uppercase tracking-[1em] text-brand-gold mb-8 animate-pulse">EST. 1994</p>
+                <h1 class="text-[clamp(4rem,15vw,18rem)] font-serif italic font-black leading-[0.85] tracking-tight pointer-events-none">
+                    SAVO<br><span class="pl-[10vw] outline-text">RIA</span>
+                </h1>
+                <div class="mt-20 flex flex-col md:flex-row gap-12 items-start max-w-4xl">
+                    <p class="text-lg md:text-2xl font-light leading-relaxed opacity-60">
+                        Redefining the essence of fine dining through minimalist expression and brutalist honesty.
+                    </p>
+                    <a href="#menu" class="group relative py-4 px-10 border border-brand-white/20 overflow-hidden inline-block transition-all hover:border-brand-gold">
+                        <span class="relative z-10 text-[10px] uppercase tracking-[0.5em] group-hover:text-brand-gold">Taste Ritual</span>
+                        <div class="absolute inset-0 bg-brand-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-5"></div>
+                    </a>
                 </div>
             </div>
+            
+            <!-- Large background text -->
+            <div class="absolute right-[-10vw] bottom-[10vh] text-[30vw] font-serif font-black opacity-[0.03] select-none pointer-events-none italic">
+                CULTURE
+            </div>
         </section>
 
-        <section class="container section text-center">
-            <div class="cta-box">
-                <h2>Siap untuk Makan Malam yang Berbeda?</h2>
-                <p>Pastikan meja Anda telah tersedia malam ini.</p>
-                <a href="#" class="btn btn-primary">Reservasi Sekarang</a>
+        <section id="about" class="py-40 px-8 md:px-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+                <div class="md:col-span-7">
+                    <div class="bg-zinc-900 aspect-[4/5] w-full relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-black/50"></div>
+                        <!-- Image placeholder text -->
+                        <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-[1em] opacity-20">Artisan Craft</div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 md:pl-12">
+                    <h2 class="text-5xl font-serif italic mb-10">Menciptakan <span class="text-brand-gold underline decoration-1 underline-offset-8">Kemurnian</span></h2>
+                    <p class="text-lg font-light leading-loose opacity-70 mb-12">
+                        Kami tidak sekadar memasak. Kami merakit pengalaman. Setiap bahan dipilih untuk kejujurannya, setiap piring disusun sebagai manifesto keindahan yang fana.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="h-[1px] w-20 bg-brand-gold mt-3"></div>
+                        <p class="text-xs uppercase tracking-widest text-brand-gold">Chef's Philosophy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="py-40 bg-[#0c0c0c] border-y border-white/5">
+            <div class="container mx-auto px-8">
+                <div class="flex justify-between items-end mb-32">
+                    <h2 class="text-7xl md:text-9xl font-serif italic opacity-10">THE MENU</h2>
+                    <p class="text-[10px] uppercase tracking-[0.5em] text-brand-gold mb-4">Curated Selections</p>
+                </div>
+
+                <div class="space-y-32">
+                    <!-- Menu Item 1 -->
+                    <div class="group grid grid-cols-1 md:grid-cols-12 items-center gap-12 cursor-pointer border-b border-white/5 pb-12 hover:border-brand-gold transition-colors">
+                        <span class="md:col-span-1 text-xs opacity-40 font-bold">01/</span>
+                        <h3 class="md:col-span-6 text-4xl md:text-6xl font-serif italic group-hover:translate-x-4 transition-transform duration-700">Truffle Forest</h3>
+                        <p class="md:col-span-3 text-sm opacity-50 font-light leading-relaxed">
+                            Arborio, Black Truffle, Smoked Shiitake, Gold Leaf.
+                        </p>
+                        <span class="md:col-span-2 text-right text-brand-gold font-bold tracking-widest">Rp 220k</span>
+                    </div>
+                    <!-- Menu Item 2 -->
+                    <div class="group grid grid-cols-1 md:grid-cols-12 items-center gap-12 cursor-pointer border-b border-white/5 pb-12 hover:border-brand-gold transition-colors">
+                        <span class="md:col-span-1 text-xs opacity-40 font-bold">02/</span>
+                        <h3 class="md:col-span-6 text-4xl md:text-6xl font-serif italic group-hover:translate-x-4 transition-transform duration-700">Ocean Ritual</h3>
+                        <p class="md:col-span-3 text-sm opacity-50 font-light leading-relaxed">
+                            Miso Glazed Salmon, Yuzu Gel, Seaweed Dust.
+                        </p>
+                        <span class="md:col-span-2 text-right text-brand-gold font-bold tracking-widest">Rp 315k</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-60 px-8 text-center bg-brand-black">
+            <h2 class="text-xs uppercase tracking-[1em] text-brand-gold mb-12">The Reservation</h2>
+            <a href="mailto:reserve@savoria.com" class="text-4xl md:text-[8vw] font-serif italic underline decoration-1 underline-offset-[20px] hover:text-brand-gold transition-colors">
+                reserve@savoria.com
+            </a>
+            <div class="mt-40 text-[10px] uppercase tracking-[0.5em] opacity-30 flex flex-col md:flex-row justify-center gap-12">
+                <span>Jakarta, Indonesia</span>
+                <span>Open Daily 18:00 — 23:00</span>
+                <span>Limited Seating</span>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <div class="logo">SAVORIA</div>
-                <p>Minimalist Fine Dining Experience.</p>
-            </div>
-            <div class="footer-contact">
-                <h4>Kontak</h4>
-                <p>Jl. Estetika No. 42, Jakarta</p>
-                <p>+62 21 1234 5678</p>
-            </div>
-            <div class="footer-social">
-                <h4>Ikuti Kami</h4>
-                <a href="#">Instagram</a> | <a href="#">Facebook</a>
-            </div>
+    <footer class="p-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 bg-brand-black">
+        <div class="text-[10px] tracking-widest opacity-40 uppercase">&copy; 2026 Savoria. All Rights Reserved.</div>
+        <div class="flex gap-8 text-[10px] tracking-widest opacity-40 uppercase">
+            <a href="#" class="hover:opacity-100 transition-opacity">Instagram</a>
+            <a href="#" class="hover:opacity-100 transition-opacity">Facebook</a>
         </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2026 Savoria Restaurant. All rights reserved.</p>
-        </div>
+        <div class="text-[10px] tracking-widest opacity-40 uppercase">Design by Gemini CLI</div>
     </footer>
 </body>
 </html>
