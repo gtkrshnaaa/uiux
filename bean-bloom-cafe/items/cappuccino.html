@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cappuccino | Bean & Bloom</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { serene: { cream: '#fdfcf8', sage: '#e2e7d6', clay: '#d4a373', ink: '#2a2a2a', } }, fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'], } } }
+        }
+    </script>
+    <style>
+        .grain { position: fixed; top: -150%; left: -150%; width: 300%; height: 300%; background-image: url("https://grainy-gradients.vercel.app/noise.svg"); opacity: 0.04; pointer-events: none; z-index: 9999; animation: grain 8s steps(10) infinite; }
+        @keyframes grain { 0%, 100% { transform:translate(0, 0); } 10% { transform:translate(-5%, -10%); } 20% { transform:translate(-15%, 5%); } 30% { transform:translate(7%, -25%); } 40% { transform:translate(-5%, 25%); } 50% { transform:translate(-15%, 10%); } 60% { transform:translate(15%, 0%); } 70% { transform:translate(0%, 15%); } 80% { transform:translate(3%, 35%); } 90% { transform:translate(-10%, 10%); } }
+        .custom-cursor { width: 8px; height: 8px; background: #2a2a2a; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; transition: transform 0.1s ease-out, width 0.3s ease, height 0.3s ease, opacity 0.3s ease; }
+        .custom-cursor-follower { width: 30px; height: 30px; border: 1px solid rgba(42, 42, 42, 0.2); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transition: transform 0.15s ease-out; }
+        body:hover .custom-cursor, body:hover .custom-cursor-follower { opacity: 1; }
+        .cursor-active .custom-cursor { transform: scale(4); background: rgba(42, 42, 42, 0.1); backdrop-filter: blur(2px); }
+        html.lenis { height: auto; }
+        .lenis-smooth { scroll-behavior: auto !important; }
+    </style>
+</head>
+<body class="bg-serene-cream text-serene-ink font-sans selection:bg-serene-clay selection:text-white overflow-x-hidden">
+    <div class="grain"></div>
+    <div class="custom-cursor hidden md:block"></div>
+    <div class="custom-cursor-follower hidden md:block"></div>
+    <header class="fixed w-full z-50 p-6 md:p-12 flex justify-between items-start pointer-events-none">
+        <div class="pointer-events-auto"><a href="../index.html" class="text-xl font-serif italic tracking-tighter magnetic-btn inline-block">Bean & Bloom</a></div>
+        <div class="flex flex-col items-end gap-4 pointer-events-auto">
+            <button id="menu-toggle" class="w-12 h-12 flex flex-col justify-center items-center gap-1.5 bg-serene-ink text-white rounded-full group relative z-[60] magnetic-btn">
+                <span id="line1" class="w-5 h-0.5 bg-white transition-all"></span>
+                <span id="line2" class="w-5 h-0.5 bg-white transition-all"></span>
+            </button>
+        </div>
+    </header>
+    <div id="mobile-menu" class="fixed inset-0 bg-serene-ink z-[55] flex flex-col items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)]">
+        <nav class="flex flex-col items-center gap-8 text-center">
+            <a href="../index.html" class="text-serene-cream text-4xl font-serif italic hover:text-serene-clay transition-colors">Home</a>
+            <a href="../about.html" class="text-serene-cream text-4xl font-serif italic hover:text-serene-clay transition-colors">Our Story</a>
+            <a href="../menu.html" class="text-serene-cream text-4xl font-serif italic hover:text-serene-clay transition-colors">The Brews</a>
+            <a href="../locations.html" class="text-serene-cream text-4xl font-serif italic hover:text-serene-clay transition-colors">Find Us</a>
+        </nav>
+    </div>
+    <main>
+        <section class="min-h-screen flex flex-col justify-center px-8 pt-40 pb-20 relative overflow-hidden">
+            <div class="container mx-auto">
+                <div class="max-w-5xl relative z-10">
+                    <span class="text-[10px] uppercase tracking-[0.6em] text-serene-clay mb-8 block font-semibold hero-reveal">The Classics</span>
+                    <h1 class="text-[clamp(3.5rem,12vw,10rem)] font-light leading-[0.9] tracking-tighter mb-12 hero-reveal">Cappuccino</h1>
+                    <p class="max-w-lg text-xl font-light leading-relaxed opacity-60 hero-reveal">Classic 1:1:1 ratio, steamed at 65°C for the perfect micro-foam sweetness.</p>
+                </div>
+            </div>
+            <div class="absolute right-[-5%] top-1/2 -translate-y-1/2 text-[30vw] opacity-[0.03] select-none pointer-events-none font-serif italic">Classic</div>
+            <div class="absolute right-[10%] top-1/2 -translate-y-1/2 aspect-square w-[40vw] bg-serene-sage/20 rounded-full blur-[120px] hero-reveal"></div>
+            <div class="absolute right-[15%] top-1/2 -translate-y-1/2 text-[15vw] hero-reveal select-none">☕</div>
+        </section>
+        <section class="py-40 px-8 bg-white">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
+                    <div class="space-y-24">
+                        <div class="reveal-item">
+                            <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-8">The Origin</h2>
+                            <p class="text-3xl font-light leading-snug">Sourced from the <span class="font-serif italic text-serene-clay text-4xl">Cerrado</span> region of Brazil, known for its nutty profile.</p>
+                        </div>
+                        <div class="reveal-item">
+                            <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-8">Tasting Notes</h2>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="px-6 py-3 border border-serene-ink/10 rounded-full text-sm">Chocolate</span>
+                                <span class="px-6 py-3 border border-serene-ink/10 rounded-full text-sm">Roasted Nut</span>
+                                <span class="px-6 py-3 border border-serene-ink/10 rounded-full text-sm">Caramel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-24">
+                        <div class="reveal-item">
+                            <h2 class="text-xs uppercase tracking-[0.5em] text-serene-clay mb-8">The Ritual</h2>
+                            <p class="text-lg font-light leading-loose opacity-70">Classic 1:1:1 ratio, steamed at 65°C for the perfect micro-foam sweetness. Our baristas meticulously balance espresso, steamed milk, and airy foam to create a timeless experience.</p>
+                        </div>
+                        <div class="reveal-item pt-12 border-t border-serene-ink/5">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest opacity-40">Serving Price</span>
+                                <span class="text-4xl font-light">$5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-60 px-8 text-center border-t border-serene-ink/5">
+            <div class="container mx-auto">
+                <span class="text-[10px] uppercase tracking-[0.5em] text-serene-clay mb-8 block">Discover Next</span>
+                <a href="flat-white.html" class="group inline-block magnetic-btn">
+                    <h2 class="text-5xl md:text-8xl font-light hover:text-serene-clay transition-colors duration-500">Flat <span class="font-serif italic">White</span></h2>
+                    <div class="mt-12 flex items-center justify-center gap-4 opacity-40 group-hover:opacity-100 transition-opacity">
+                        <span class="text-xs uppercase tracking-[0.4em]">Next Brew</span>
+                        <span class="text-2xl">→</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="p-12 text-center text-[10px] uppercase tracking-[0.5em] opacity-40"><p>&copy; 2026 Bean & Bloom. All is Still.</p></footer>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        const cursor = document.querySelector('.custom-cursor'), follower = document.querySelector('.custom-cursor-follower');
+        let mouseX = 0, mouseY = 0, ballX = 0, ballY = 0, followerX = 0, followerY = 0;
+        document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+        function animateCursor() {
+            ballX += (mouseX - ballX) * 0.2; ballY += (mouseY - ballY) * 0.2; followerX += (mouseX - followerX) * 0.1; followerY += (mouseY - followerY) * 0.1;
+            cursor.style.transform = `translate3d(${ballX - 4}px, ${ballY - 4}px, 0)`; follower.style.transform = `translate3d(${followerX - 15}px, ${followerY - 15}px, 0)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        document.querySelectorAll('a, button, .group, .magnetic-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+        });
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2, y = e.clientY - rect.top - rect.height / 2;
+                gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" });
+            });
+            btn.addEventListener('mouseleave', () => gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.3)" }));
+        });
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.hero-reveal', { y: 50, opacity: 0, duration: 1.5, stagger: 0.2, ease: "power4.out", delay: 0.5 });
+        document.querySelectorAll('.reveal-item').forEach(item => { gsap.from(item, { scrollTrigger: { trigger: item, start: "top 85%" }, y: 40, opacity: 0, duration: 1.2, ease: "power3.out" }); });
+        const menuToggle = document.getElementById('menu-toggle'), mobileMenu = document.getElementById('mobile-menu'), line1 = document.getElementById('line1'), line2 = document.getElementById('line2');
+        let isOpen = false;
+        menuToggle.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) { mobileMenu.classList.remove('translate-y-full'); line1.classList.add('rotate-45', 'translate-y-1'); line2.classList.add('-rotate-45', '-translate-y-1'); }
+            else { mobileMenu.classList.add('translate-y-full'); line1.classList.remove('rotate-45', 'translate-y-1'); line2.classList.remove('-rotate-45', '-translate-y-1'); }
+        });
+    </script>
+</body>
+</html>
