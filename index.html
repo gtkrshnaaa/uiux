@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIUX Collection 2026 | Minimalist Designs</title>
+    <title>UIUX Collection 2026 | Award Winning Designs</title>
     <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,6 @@
                             black: '#0c0c0c',
                             white: '#fcfcfc',
                             gold: '#c5a059',
-                            sage: '#e2e7d6',
                         }
                     },
                     fontFamily: {
@@ -30,56 +29,82 @@
         }
     </script>
     <style>
-        .split-item {
-            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        .list-item:hover .preview-image {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1) rotate(5deg);
+        }
+        .preview-image {
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            pointer-events: none;
         }
     </style>
 </head>
-<body class="bg-portal-black text-portal-white font-sans overflow-hidden h-screen selection:bg-portal-gold selection:text-portal-black">
-    <!-- Overlay Grain effect -->
+<body class="bg-portal-black text-portal-white font-sans selection:bg-portal-gold selection:text-portal-black min-h-screen flex flex-col">
+    <!-- Overlay Grain Effect -->
     <div class="fixed inset-0 pointer-events-none opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] z-50"></div>
 
-    <header class="fixed top-0 left-0 w-full p-12 z-40 flex justify-between items-center mix-blend-difference">
-        <div class="text-[10px] uppercase tracking-[0.5em] font-bold">Project 02/02 — Collection Portal</div>
+    <header class="p-12 z-40 flex justify-between items-center mix-blend-difference">
+        <div class="text-[10px] uppercase tracking-[0.5em] font-bold">Project 02/05 — Full Collection</div>
         <div class="text-[10px] uppercase tracking-[0.5em] opacity-40">2026 Edition</div>
     </header>
 
-    <main class="h-screen flex flex-col md:flex-row overflow-hidden">
-        <!-- Restaurant Section -->
-        <a href="restaurant/index.html" class="split-item relative flex-1 group overflow-hidden border-b md:border-b-0 md:border-r border-white/5">
-            <div class="absolute inset-0 bg-zinc-900 group-hover:scale-110 transition-transform duration-1000">
-                <div class="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700"></div>
-                <!-- Background Image Placeholder -->
-                <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-[1em] opacity-10">THE BLACK LABEL</div>
-            </div>
-            
-            <div class="relative z-10 h-full flex flex-col justify-center items-center p-8 text-center">
-                <span class="text-[8px] uppercase tracking-[0.8em] text-portal-gold mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Luxury Dining</span>
-                <h2 class="text-5xl md:text-8xl font-serif italic mb-8 transform group-hover:-translate-y-4 transition-transform duration-700">Restaurant</h2>
-                <div class="w-12 h-[1px] bg-white/20 group-hover:w-32 group-hover:bg-portal-gold transition-all duration-700"></div>
-                <p class="mt-8 text-xs uppercase tracking-[0.4em] opacity-0 group-hover:opacity-60 transition-all duration-700">View Experience</p>
-            </div>
-        </a>
+    <main class="flex-1 flex flex-col justify-center px-12 md:px-24">
+        <div class="space-y-4">
+            <!-- Restaurant -->
+            <a href="restaurant/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">01/</span>
+                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Restaurant</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Black Label</span>
+                </div>
+                <!-- Image Hover Preview -->
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Dining Experience</div>
+            </a>
 
-        <!-- Cafe Section -->
-        <a href="cafe/index.html" class="split-item relative flex-1 group overflow-hidden bg-portal-white">
-            <div class="absolute inset-0 bg-portal-sage/30 group-hover:scale-110 transition-transform duration-1000">
-                <div class="absolute inset-0 bg-transparent group-hover:bg-portal-white/20 transition-colors duration-700"></div>
-                <!-- Background Image Placeholder -->
-                <div class="absolute inset-0 flex items-center justify-center text-[10px] uppercase tracking-[1em] opacity-10 text-portal-black">THE SERENE BREW</div>
-            </div>
-            
-            <div class="relative z-10 h-full flex flex-col justify-center items-center p-8 text-center text-portal-black">
-                <span class="text-[8px] uppercase tracking-[0.8em] text-portal-clay mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Quiet Coffee</span>
-                <h2 class="text-5xl md:text-8xl font-serif italic mb-8 transform group-hover:-translate-y-4 transition-transform duration-700">Cafe</h2>
-                <div class="w-12 h-[1px] bg-black/10 group-hover:w-32 group-hover:bg-portal-black transition-all duration-700"></div>
-                <p class="mt-8 text-xs uppercase tracking-[0.4em] opacity-0 group-hover:opacity-40 transition-all duration-700">Explore Silence</p>
-            </div>
-        </a>
+            <!-- Cafe -->
+            <a href="cafe/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">02/</span>
+                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Cafe</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Serene Brew</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Quiet Moments</div>
+            </a>
+
+            <!-- Architecture -->
+            <a href="architecture/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">03/</span>
+                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Architecture</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Brutalist Frame</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Structural Honesty</div>
+            </a>
+
+            <!-- Fashion -->
+            <a href="fashion/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">04/</span>
+                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Fashion</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Vogue & Vision</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Luxury Lookbook</div>
+            </a>
+
+            <!-- Skincare -->
+            <a href="skincare/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">05/</span>
+                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Skincare</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Essential Dew</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Muted Purity</div>
+            </a>
+        </div>
     </main>
 
-    <footer class="fixed bottom-0 left-0 w-full p-12 z-40 flex justify-center items-center mix-blend-difference pointer-events-none">
-        <div class="text-[10px] uppercase tracking-[1em] font-light">Crafted by Gemini CLI / Award Winning Edition</div>
+    <footer class="p-12 z-40 flex justify-center items-center mix-blend-difference pointer-events-none">
+        <div class="text-[10px] uppercase tracking-[1em] font-light">Crafted by Gemini CLI / Collection Hub</div>
     </footer>
 </body>
 </html>
