@@ -209,51 +209,196 @@
             </div>
         </section>
 
-        <section id="menu" class="py-40 bg-white">
-            <div class="container mx-auto px-8">
-                <div class="text-center mb-32">
+        <section id="menu-gallery" class="py-40 bg-white overflow-hidden relative">
+            <div class="px-8 mb-24 relative z-10">
+                <div class="container mx-auto">
                     <span class="text-[10px] uppercase tracking-[0.5em] text-serene-clay mb-4 block">The Selection</span>
-                    <h2 class="text-6xl font-light">Essential Brews</h2>
+                    <h2 class="text-6xl md:text-8xl font-light leading-tight">The Brews <br><span class="font-serif italic text-serene-clay">Gallery</span></h2>
                 </div>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                    <!-- Specialty 1 -->
-                    <div class="group">
-                        <div class="aspect-square bg-serene-cream rounded-full mb-10 overflow-hidden relative transition-transform duration-700 group-hover:scale-95">
-                            <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20 group-hover:opacity-100 transition-opacity">☕</div>
+            <!-- Horizontal Scroll Container -->
+            <div class="horizontal-wrapper overflow-hidden">
+                <div class="horizontal-container flex gap-12 px-8 pb-20">
+                    <!-- 12 Menu Cards -->
+                    <!-- Signatures -->
+                    <a href="items/cloud-latte.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-cream rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">☕</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-4 text-center">Cloud Latte</h3>
-                        <p class="text-sm font-light opacity-60 text-center leading-relaxed">
-                            A velvety blend of cold-frothed oat milk and our signature light roast.
-                        </p>
-                    </div>
-                    <!-- Specialty 2 -->
-                    <div class="group">
-                        <div class="aspect-square bg-serene-sage/40 rounded-full mb-10 overflow-hidden relative transition-transform duration-700 group-hover:scale-95">
-                            <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20 group-hover:opacity-100 transition-opacity">🧊</div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Cloud Latte</h3>
+                            <span class="text-sm font-light opacity-40">$6.5</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-4 text-center">Still Cold Brew</h3>
-                        <p class="text-sm font-light opacity-60 text-center leading-relaxed">
-                            12-hour immersion with notes of jasmine and honey. Served still.
-                        </p>
-                    </div>
-                    <!-- Specialty 3 -->
-                    <div class="group">
-                        <div class="aspect-square bg-serene-cream rounded-full mb-10 overflow-hidden relative transition-transform duration-700 group-hover:scale-95">
-                            <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20 group-hover:opacity-100 transition-opacity">🥐</div>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-4 text-center">Daily Pastry</h3>
-                        <p class="text-sm font-light opacity-60 text-center leading-relaxed">
-                            Hand-rolled, slow-proofed, and baked with organic butter.
-                        </p>
-                    </div>
-                </div>
+                    </a>
 
-                <div class="mt-32 text-center">
-                    <a href="menu.html" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all magnetic-btn px-4 py-2">
-                        Explore Full Menu
+                    <a href="items/still-cold-brew.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-sage/20 rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🧊</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Still Cold Brew</h3>
+                            <span class="text-sm font-light opacity-40">$5.5</span>
+                        </div>
+                    </a>
+
+                    <a href="items/bloom-espresso.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-cream rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🌸</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Bloom Espresso</h3>
+                            <span class="text-sm font-light opacity-40">$4.0</span>
+                        </div>
+                    </a>
+
+                    <!-- Classics -->
+                    <a href="items/cappuccino.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-sage/20 rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">☕</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Cappuccino</h3>
+                            <span class="text-sm font-light opacity-40">$5.0</span>
+                        </div>
+                    </a>
+
+                    <a href="items/flat-white.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-cream rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🥛</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Flat White</h3>
+                            <span class="text-sm font-light opacity-40">$5.0</span>
+                        </div>
+                    </a>
+
+                    <a href="items/pour-over.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-sage/20 rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">⚗️</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Pour Over</h3>
+                            <span class="text-sm font-light opacity-40">$6.0</span>
+                        </div>
+                    </a>
+
+                    <!-- Non-Coffee -->
+                    <a href="items/matcha.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-cream rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🍵</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Ceremonial Matcha</h3>
+                            <span class="text-sm font-light opacity-40">$6.5</span>
+                        </div>
+                    </a>
+
+                    <a href="items/golden-latte.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-sage/20 rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">✨</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Golden Latte</h3>
+                            <span class="text-sm font-light opacity-40">$6.0</span>
+                        </div>
+                    </a>
+
+                    <a href="items/wildflower-tea.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-cream rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🪻</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Wildflower Tea</h3>
+                            <span class="text-sm font-light opacity-40">$5.0</span>
+                        </div>
+                    </a>
+
+                    <!-- Bakery -->
+                    <a href="items/croissant.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-sage/20 rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🥐</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Daily Croissant</h3>
+                            <span class="text-sm font-light opacity-40">$4.5</span>
+                        </div>
+                    </a>
+
+                    <a href="items/avocado-toast.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-cream rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🥑</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Avocado Toast</h3>
+                            <span class="text-sm font-light opacity-40">$12.0</span>
+                        </div>
+                    </a>
+
+                    <a href="items/truffle-scrambled.html" class="menu-card flex-shrink-0 w-[300px] md:w-[450px] group magnetic-btn">
+                        <div class="aspect-[4/5] bg-serene-sage/20 rounded-2xl overflow-hidden mb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700">🍳</div>
+                            <div class="absolute inset-0 bg-serene-ink/0 group-hover:bg-serene-ink/5 transition-colors duration-500"></div>
+                            <div class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 transition-transform">
+                                <span class="text-[10px] uppercase tracking-widest text-serene-ink bg-white/80 backdrop-blur-md px-4 py-2 rounded-full font-bold">View Story</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-serene-ink/5 pb-4">
+                            <h3 class="text-2xl font-serif italic">Truffle Scrambled</h3>
+                            <span class="text-sm font-light opacity-40">$15.0</span>
+                        </div>
                     </a>
                 </div>
+            </div>
+
+            <div class="mt-20 text-center relative z-10">
+                <a href="menu.html" class="inline-block text-xs uppercase tracking-[0.4em] font-bold border-b border-serene-ink pb-2 hover:text-serene-clay hover:border-serene-clay transition-all magnetic-btn px-4 py-2">
+                    Explore Full Menu
+                </a>
             </div>
         </section>
         <section id="contact" class="py-60 px-8">
@@ -366,6 +511,22 @@
 
         // GSAP Revelations
         gsap.registerPlugin(ScrollTrigger);
+
+        // Horizontal Scroll Gallery
+        const galleryContainer = document.querySelector('.horizontal-container');
+        if (galleryContainer) {
+            gsap.to(galleryContainer, {
+                x: () => -(galleryContainer.scrollWidth - window.innerWidth + 64) + "px",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#menu-gallery",
+                    pin: true,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    end: () => "+=" + galleryContainer.scrollWidth
+                }
+            });
+        }
 
         // Parallax Images
         const parallaxImages = document.querySelectorAll('.aspect-\\[3\\/4\\], .aspect-square');
