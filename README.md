@@ -7,11 +7,11 @@ A curated multi-industry collection of "Award Winning" level landing page design
 The collection is organized as a modular hub, accessible through an interactive portal.
 
 - **Collection Hub (Root):** An interactive vertical list with hover-preview transitions.
-- **The Black Label (Restaurant):** Dark mode, bold typography, high-contrast luxury.
-- **The Serene Brew (Cafe):** Light mode, minimalist, focused on tranquility and white space.
-- **The Brutalist Frame (Architecture):** Geometric, monochromatic, and structurally honest.
-- **Vogue & Vision (Fashion):** Editorial-style lookbook with high-fashion luxury aesthetics.
-- **The Essential Dew (Skincare):** Soft, botanical, and ethereal purity.
+- **SavoriaRestaurant:** Dark mode, bold typography, high-contrast luxury dining.
+- **BeanBloomCafe:** Light mode, minimalist, focused on tranquility and white space coffee culture.
+- **BrutalFrameArchitecture:** Geometric, monochromatic, and structurally honest architecture.
+- **VogueVisionFashion:** Editorial-style lookbook with high-fashion luxury fashion aesthetics.
+- **EssentialDewSkincare:** Soft, botanical, and ethereal purity skincare rituals.
 
 ## Tech Stack
 
@@ -35,12 +35,12 @@ Utilizing smooth transitions and interactive states to create a professional and
 
 ```text
 .
-├── index.html            # Collection Hub
-├── restaurant/           # Restaurant Design
-├── cafe/                 # Cafe Design
-├── architecture/         # Architecture Design
-├── fashion/              # Fashion Design
-└── skincare/             # Skincare Design
+├── index.html                      # Collection Hub
+├── SavoriaRestaurant/               # Restaurant Design
+├── BeanBloomCafe/                   # Cafe Design
+├── BrutalFrameArchitecture/         # Architecture Design
+├── VogueVisionFashion/              # Fashion Design
+└── EssentialDewSkincare/            # Skincare Design
 ```
 
 ## How to View
