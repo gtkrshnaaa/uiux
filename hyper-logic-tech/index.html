@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Logic | Tech & SaaS Systems</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Outfit:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tech: {
+                            deep: '#050505',
+                            neon: '#00f2ff',
+                            grid: '#1a1a1a',
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-tech-deep text-white font-sans selection:bg-tech-neon selection:text-black">
+    <!-- Matrix Grid Background -->
+    <div class="fixed inset-0 pointer-events-none opacity-20 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:40px_40px] z-0"></div>
+
+    <header class="fixed w-full z-50 p-8 flex justify-between items-center border-b border-white/5 bg-tech-deep/80 backdrop-blur-md">
+        <div class="font-mono font-bold text-xl tracking-tighter flex items-center gap-2">
+            <span class="w-2 h-2 bg-tech-neon animate-pulse"></span>
+            HYPER_LOGIC
+        </div>
+        <nav class="hidden md:flex gap-12 font-mono text-[10px] uppercase tracking-[0.2em]">
+            <a href="#core" class="hover:text-tech-neon transition-colors">/Core</a>
+            <a href="#logic" class="hover:text-tech-neon transition-colors">/Logic</a>
+            <a href="#connect" class="hover:text-tech-neon transition-colors">/Connect</a>
+        </nav>
+        <div class="text-[10px] font-mono opacity-40">System_v2.0.26</div>
+    </header>
+
+    <main class="relative z-10 pt-32">
+        <!-- Hero -->
+        <section class="min-h-screen px-8 flex flex-col justify-center">
+            <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-8">
+                    <h1 class="text-[clamp(3rem,10vw,12rem)] font-bold leading-[0.85] tracking-tighter uppercase mb-12">
+                        Logic <br> <span class="text-tech-neon italic">Redefined.</span>
+                    </h1>
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <p class="max-w-md font-mono text-sm leading-relaxed opacity-50">
+                            Build systems that think, scale, and evolve. Our neural architecture provides the backbone for the next generation of global logic.
+                        </p>
+                        <a href="#" class="group relative px-8 py-4 border border-tech-neon/30 overflow-hidden font-mono text-[10px] uppercase tracking-widest font-bold">
+                            <span class="relative z-10">Deploy Logic</span>
+                            <div class="absolute inset-0 bg-tech-neon translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 opacity-20"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-4 hidden md:block">
+                    <div class="aspect-square border border-tech-neon/10 flex items-center justify-center relative group">
+                        <div class="absolute inset-0 bg-tech-neon/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="text-[12rem] font-bold text-tech-neon opacity-10 font-mono">01</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Systems -->
+        <section id="core" class="py-40 px-8 border-y border-white/5 bg-tech-deep">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex justify-between items-end mb-24">
+                    <h2 class="text-4xl md:text-7xl font-bold uppercase tracking-tighter">Core Systems</h2>
+                    <span class="font-mono text-[10px] opacity-30 mb-2">/Infrastructure</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-1 px-0 border border-white/5">
+                    <div class="p-12 border border-white/5 hover:bg-tech-neon/5 transition-colors group">
+                        <div class="w-8 h-8 bg-tech-neon/20 mb-8 rounded-sm"></div>
+                        <h3 class="text-xl font-bold mb-4 font-mono">Neural Grid</h3>
+                        <p class="text-sm opacity-50 leading-relaxed font-light">Adaptive infrastructure that self-heals and optimizes in real-time based on data flow.</p>
+                    </div>
+                    <div class="p-12 border border-white/5 hover:bg-tech-neon/5 transition-colors group">
+                        <div class="w-8 h-8 bg-tech-neon/20 mb-8 rounded-sm"></div>
+                        <h3 class="text-xl font-bold mb-4 font-mono">Quantum Stack</h3>
+                        <p class="text-sm opacity-50 leading-relaxed font-light">Processing speeds that transcend traditional silicon limits. Instantaneous state resolve.</p>
+                    </div>
+                    <div class="p-12 border border-white/5 hover:bg-tech-neon/5 transition-colors group">
+                        <div class="w-8 h-8 bg-tech-neon/20 mb-8 rounded-sm"></div>
+                        <h3 class="text-xl font-bold mb-4 font-mono">Secure Void</h3>
+                        <p class="text-sm opacity-50 leading-relaxed font-light">Military-grade zero-trust architecture. Your data remains in an unreachable logical void.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Connect -->
+        <section id="connect" class="py-60 px-8 text-center bg-tech-deep">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-[8vw] font-bold uppercase tracking-tighter italic mb-12">Connect_System</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-12 font-mono text-[10px] uppercase tracking-widest">
+                    <a href="#" class="border border-white/10 px-10 py-4 hover:border-tech-neon transition-colors transition-colors">Documentation</a>
+                    <a href="#" class="bg-tech-neon text-black px-10 py-4 font-black hover:shadow-[0_0_30px_rgba(0,242,255,0.4)] transition-all">Request Access</a>
+                </div>
+            </div>
+            <div class="mt-40 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center opacity-30 font-mono text-[8px] uppercase tracking-[0.5em]">
+                <span>Log_001 // System Operational</span>
+                <span>© 2026 Hyper Logic Systems</span>
+                <span>Security Status: Optimal</span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

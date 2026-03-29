@@ -37,6 +37,17 @@
             transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
             pointer-events: none;
         }
+        /* Custom scrollbar for better aesthetic */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0c0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body class="bg-portal-black text-portal-white font-sans selection:bg-portal-gold selection:text-portal-black min-h-screen flex flex-col">
@@ -44,67 +55,116 @@
     <div class="fixed inset-0 pointer-events-none opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] z-50"></div>
 
     <header class="p-12 z-40 flex justify-between items-center mix-blend-difference">
-        <div class="text-[10px] uppercase tracking-[0.5em] font-bold">Project 02/05 — Full Collection</div>
+        <div class="text-[10px] uppercase tracking-[0.5em] font-bold">Project 02/10 — Full Collection</div>
         <div class="text-[10px] uppercase tracking-[0.5em] opacity-40">2026 Edition</div>
     </header>
 
-    <main class="flex-1 flex flex-col justify-center px-12 md:px-24">
-        <div class="space-y-4">
-            <!-- Restaurant -->
-            <a href="savoria-restaurant/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+    <main class="flex-1 flex flex-col justify-center px-12 md:px-24 py-20">
+        <div class="space-y-4 max-w-6xl mx-auto w-full">
+            <!-- 01 - Restaurant -->
+            <a href="savoria-restaurant/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
                 <div class="flex items-center justify-between relative z-10">
                     <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">01/</span>
-                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Restaurant</h2>
-                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Black Label</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Restaurant</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Black Label</span>
                 </div>
-                <!-- Image Hover Preview -->
-                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Dining Experience</div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Dining</div>
             </a>
 
-            <!-- Cafe -->
-            <a href="bean-bloom-cafe/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+            <!-- 02 - Cafe -->
+            <a href="bean-bloom-cafe/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
                 <div class="flex items-center justify-between relative z-10">
                     <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">02/</span>
-                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Cafe</h2>
-                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Serene Brew</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Cafe</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Serene Brew</span>
                 </div>
-                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Quiet Moments</div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Coffee</div>
             </a>
 
-            <!-- Architecture -->
-            <a href="brutal-frame-architecture/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+            <!-- 03 - Architecture -->
+            <a href="brutal-frame-architecture/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
                 <div class="flex items-center justify-between relative z-10">
                     <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">03/</span>
-                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Architecture</h2>
-                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Brutalist Frame</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Architecture</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Brutalist Frame</span>
                 </div>
-                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Structural Honesty</div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Structure</div>
             </a>
 
-            <!-- Fashion -->
-            <a href="vogue-vision-fashion/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+            <!-- 04 - Fashion -->
+            <a href="vogue-vision-fashion/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
                 <div class="flex items-center justify-between relative z-10">
                     <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">04/</span>
-                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Fashion</h2>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Fashion</h2>
                     <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Vogue & Vision</span>
                 </div>
-                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Luxury Lookbook</div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Editorial</div>
             </a>
 
-            <!-- Skincare -->
-            <a href="essential-dew-skincare/index.html" class="list-item group relative block border-b border-white/10 py-10 overflow-visible">
+            <!-- 05 - Skincare -->
+            <a href="essential-dew-skincare/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
                 <div class="flex items-center justify-between relative z-10">
                     <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">05/</span>
-                    <h2 class="text-5xl md:text-9xl font-serif italic group-hover:pl-12 transition-all duration-700">Skincare</h2>
-                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">The Essential Dew</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Skincare</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Essential Dew</span>
                 </div>
-                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Muted Purity</div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Purity</div>
+            </a>
+
+            <!-- 06 - Tech -->
+            <a href="hyper-logic-tech/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">06/</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Tech</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Hyper Logic</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Systems</div>
+            </a>
+
+            <!-- 07 - Hotel -->
+            <a href="oasis-retreat-hotel/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">07/</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Hotel</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Oasis Retreat</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Hospitality</div>
+            </a>
+
+            <!-- 08 - Interior -->
+            <a href="spatial-poem-interior/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">08/</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Interior</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Spatial Poem</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Texture</div>
+            </a>
+
+            <!-- 09 - Art Gallery -->
+            <a href="canvas-void-gallery/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">09/</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Gallery</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Canvas Void</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-900 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Silent Art</div>
+            </a>
+
+            <!-- 10 - Bakery -->
+            <a href="artisan-grain-bakery/index.html" class="list-item group relative block border-b border-white/10 py-8 overflow-visible">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs opacity-40 font-bold group-hover:text-portal-gold transition-colors">10/</span>
+                    <h2 class="text-4xl md:text-8xl font-serif italic group-hover:pl-12 transition-all duration-700">Bakery</h2>
+                    <span class="text-[10px] uppercase tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">Artisan Grain</span>
+                </div>
+                <div class="preview-image absolute left-1/2 top-1/2 w-80 h-48 bg-zinc-800 border border-white/10 z-0 opacity-0 scale-90 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-[8px] uppercase tracking-[1em]">Handmade</div>
             </a>
         </div>
     </main>
 
     <footer class="p-12 z-40 flex justify-center items-center mix-blend-difference pointer-events-none">
-        <div class="text-[10px] uppercase tracking-[1em] font-light">Crafted by Gemini CLI / Collection Hub</div>
+        <div class="text-[10px] uppercase tracking-[1em] font-light">Crafted by Gemini CLI / Collection Hub v2</div>
     </footer>
 </body>
 </html>

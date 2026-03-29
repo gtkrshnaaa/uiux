@@ -1,23 +1,28 @@
 # UIUX Design Collection 2026
 
-A curated multi-industry collection of "Award Winning" level landing page designs. This project showcases diverse aesthetic directions—from brutalist architecture to ethereal skincare—all implemented using Tailwind CSS Play CDN.
+A curated multi-industry collection of 10 "Award Winning" level landing page designs. This project showcases diverse aesthetic directions across various sectors, all implemented using Tailwind CSS Play CDN.
 
 ## Project Architecture
 
 The collection is organized as a modular hub, accessible through an interactive portal.
 
-- **Collection Hub (Root):** An interactive vertical list with hover-preview transitions.
+- **Collection Hub (Root):** An interactive vertical list with hover-preview transitions for all 10 projects.
 - **savoria-restaurant:** Dark mode, bold typography, high-contrast luxury dining.
 - **bean-bloom-cafe:** Light mode, minimalist, focused on tranquility and white space coffee culture.
 - **brutal-frame-architecture:** Geometric, monochromatic, and structurally honest architecture.
-- **vogue-vision-fashion:** Editorial-style lookbook with high-fashion luxury fashion aesthetics.
+- **vogue-vision-fashion:** Editorial-style lookbook with high-fashion luxury aesthetics.
 - **essential-dew-skincare:** Soft, botanical, and ethereal purity skincare rituals.
+- **hyper-logic-tech:** Neo-brutalist, dark mode, neon accents for high-end SaaS/Tech.
+- **oasis-retreat-hotel:** Sophisticated, earthy tones, extended serif for luxury hospitality.
+- **spatial-poem-interior:** Warm minimalism, focusing on texture and lighting for interior design.
+- **canvas-void-gallery:** Stark white minimalism, content-focused for modern art galleries.
+- **artisan-grain-bakery:** Rustic modern, warm tones, chunky serif for artisan baking.
 
 ## Tech Stack
 
 - **Framework:** Tailwind CSS (via Play CDN)
-- **Typography:** Google Fonts (Playfair Display, Inter, Plus Jakarta Sans, Tenor Sans)
-- **Styling:** Utility-first CSS with custom industry-specific tailwind configurations.
+- **Typography:** Google Fonts (Playfair Display, Inter, Plus Jakarta Sans, Tenor Sans, Space Grotesk, etc.)
+- **Styling:** Utility-first CSS with industry-specific configurations.
 - **Responsiveness:** Fully adaptive layouts optimized for all screen sizes.
 
 ## Design Principles
@@ -40,7 +45,12 @@ Utilizing smooth transitions and interactive states to create a professional and
 ├── bean-bloom-cafe/                 # Cafe Design
 ├── brutal-frame-architecture/       # Architecture Design
 ├── vogue-vision-fashion/            # Fashion Design
-└── essential-dew-skincare/          # Skincare Design
+├── essential-dew-skincare/          # Skincare Design
+├── hyper-logic-tech/                # Tech/SaaS Design
+├── oasis-retreat-hotel/             # Hotel/Resort Design
+├── spatial-poem-interior/           # Interior Design
+├── canvas-void-gallery/             # Art Gallery Design
+└── artisan-grain-bakery/            # Bakery Design
 ```
 
 ## How to View

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Poem | Interior Design Studio</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spatial: {
+                            warm: '#efebe3',
+                            charcoal: '#1c1c1c',
+                            muted: '#a89f91',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-spatial-warm text-spatial-charcoal font-sans selection:bg-spatial-charcoal selection:text-white">
+    <header class="fixed w-full z-50 p-12 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-tighter uppercase">Spatial<span class="font-serif italic font-normal lowercase">Poem.</span></div>
+        <nav class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold">
+            <a href="#spaces" class="hover:opacity-40 transition-opacity">Spaces</a>
+            <a href="#about" class="hover:opacity-40 transition-opacity">About</a>
+            <a href="#contact" class="hover:opacity-40 transition-opacity">Contact</a>
+        </nav>
+        <button class="w-10 h-10 border border-spatial-charcoal/10 rounded-full flex items-center justify-center group overflow-hidden">
+             <div class="w-2 h-2 bg-spatial-charcoal group-hover:scale-[10] transition-transform duration-500"></div>
+        </button>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="h-[110vh] flex flex-col justify-center px-8 relative">
+            <div class="max-w-5xl">
+                <p class="text-[10px] uppercase tracking-[0.6em] mb-12 opacity-40">Curating Atmosphere</p>
+                <h1 class="text-[8vw] md:text-[6vw] leading-[1.1] font-light tracking-tighter">
+                    We create spaces that <span class="font-serif italic text-spatial-muted">breathe</span> and stories that linger.
+                </h1>
+            </div>
+            
+            <div class="absolute bottom-12 right-12 flex gap-12 items-end">
+                <div class="flex flex-col gap-2">
+                    <span class="text-[8px] uppercase tracking-widest opacity-40">Projects</span>
+                    <span class="text-4xl font-light">42+</span>
+                </div>
+                <div class="w-40 h-[1px] bg-spatial-charcoal/20 mb-4"></div>
+            </div>
+        </section>
+
+        <!-- Spaces Grid -->
+        <section id="spaces" class="py-40 px-8 border-t border-spatial-charcoal/5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
+                <div class="space-y-12">
+                    <div class="bg-zinc-200 aspect-[4/5] rounded-3xl overflow-hidden relative group">
+                        <div class="absolute inset-0 flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-10">Minimal Kitchen</div>
+                    </div>
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-3xl font-light">The Oak Residence</h3>
+                        <span class="text-[10px] uppercase tracking-widest opacity-40">London, UK</span>
+                    </div>
+                </div>
+                <div class="space-y-12 md:pt-40">
+                    <div class="bg-zinc-300 aspect-[4/5] rounded-3xl overflow-hidden relative group">
+                        <div class="absolute inset-0 flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-10">Living Void</div>
+                    </div>
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-3xl font-light">Skyloft Studio</h3>
+                        <span class="text-[10px] uppercase tracking-widest opacity-40">Paris, FR</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aesthetic Text -->
+        <section class="py-60 bg-spatial-charcoal text-white text-center">
+            <div class="max-w-4xl mx-auto px-8">
+                <h2 class="text-4xl md:text-6xl font-serif italic font-light leading-tight mb-16">
+                    "Design is not for philosophy, it's for life."
+                </h2>
+                <div class="w-[1px] h-32 bg-white/10 mx-auto"></div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-40 px-8 text-center">
+            <p class="text-[10px] uppercase tracking-[1em] mb-12 opacity-40">Let's talk about space</p>
+            <a href="mailto:hello@spatialpoem.com" class="text-4xl md:text-[6vw] font-light hover:text-spatial-muted transition-colors tracking-tighter">
+                hello@spatialpoem.com
+            </a>
+            <div class="mt-40 pt-12 border-t border-spatial-charcoal/5 flex flex-col md:flex-row justify-between items-center text-[8px] uppercase tracking-[0.5em] opacity-30">
+                <span>London — Milan — Stockholm</span>
+                <span>© 2026 Spatial Poem Studio</span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

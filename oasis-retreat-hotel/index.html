@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Retreat | Luxury Sanctuary</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oasis: {
+                            sand: '#f5f0e6',
+                            clay: '#a67c52',
+                            deep: '#2c3e50',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-oasis-sand text-oasis-deep font-sans selection:bg-oasis-clay selection:text-white">
+    <header class="fixed w-full z-50 p-12 flex justify-between items-start mix-blend-difference pointer-events-none">
+        <div class="pointer-events-auto">
+            <a href="#" class="text-3xl font-serif italic tracking-tighter uppercase font-bold">Oasis.</a>
+        </div>
+        <div class="flex flex-col items-end gap-6 pointer-events-auto">
+            <button class="text-[10px] uppercase tracking-[0.5em] font-bold border-b border-oasis-deep pb-1">Menu</button>
+            <nav class="hidden md:flex flex-col items-end gap-2 text-[10px] uppercase tracking-[0.3em] opacity-40">
+                <a href="#retreat" class="hover:opacity-100 transition-opacity">The Retreat</a>
+                <a href="#experience" class="hover:opacity-100 transition-opacity">Experience</a>
+                <a href="#stay" class="hover:opacity-100 transition-opacity">Book Stay</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Immersive Hero -->
+        <section class="h-screen flex items-center justify-center relative overflow-hidden px-8">
+            <div class="absolute inset-0 bg-zinc-200">
+                <div class="absolute inset-0 flex items-center justify-center text-[12vw] font-serif font-black italic opacity-5 pointer-events-none uppercase tracking-tighter">Sanctuary</div>
+            </div>
+            
+            <div class="relative z-10 text-center max-w-4xl">
+                <h1 class="text-[clamp(3rem,8vw,10rem)] font-serif italic leading-[1] tracking-tighter mb-12">
+                    Grounded in <span class="text-oasis-clay font-light not-italic">Silence.</span>
+                </h1>
+                <div class="flex justify-center gap-16 items-center">
+                    <div class="h-[1px] w-24 bg-oasis-clay"></div>
+                    <p class="text-[10px] uppercase tracking-[0.6em] font-bold">Resort & Spa</p>
+                    <div class="h-[1px] w-24 bg-oasis-clay"></div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-12 left-12 flex items-center gap-4">
+                <span class="text-[10px] uppercase tracking-widest opacity-40">Location: Petra / Jordan</span>
+            </div>
+        </section>
+
+        <!-- The Retreat -->
+        <section id="retreat" class="py-40 px-8 bg-white/40">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                <div class="space-y-12">
+                    <span class="text-[10px] uppercase tracking-[0.6em] text-oasis-clay font-bold block">The Philosophy</span>
+                    <h2 class="text-6xl font-serif italic leading-tight">Architecture of <br>Modern <span class="not-italic font-light">Peace.</span></h2>
+                    <p class="text-lg font-light leading-relaxed opacity-70">
+                        Oasis Retreat dirancang untuk menyatu dengan lanskap padang pasir yang tenang. Menggunakan material bumi dan cahaya alami untuk menciptakan ruang meditasi yang mewah.
+                    </p>
+                    <a href="#" class="group flex items-center gap-4 text-xs uppercase tracking-[0.4em] font-bold">
+                        View Architecture
+                        <span class="w-12 h-12 flex items-center justify-center border border-oasis-deep/10 rounded-full group-hover:bg-oasis-deep group-hover:text-white transition-all">→</span>
+                    </a>
+                </div>
+                <div class="bg-oasis-clay/10 aspect-square rounded-full overflow-hidden relative group">
+                    <div class="absolute inset-0 flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-10">Inner Courtyard</div>
+                    <div class="absolute inset-0 bg-oasis-clay/5 group-hover:bg-transparent transition-colors duration-700"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accommodations -->
+        <section id="experience" class="py-40 px-8 bg-oasis-deep text-oasis-sand overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-oasis-clay/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
+            
+            <div class="container mx-auto relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-32 border-b border-white/10 pb-12">
+                    <h2 class="text-8xl font-serif italic tracking-tighter">The Rooms</h2>
+                    <p class="text-[10px] uppercase tracking-[0.5em] opacity-40 mb-4">Selected Suites</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div class="md:col-span-7 space-y-8">
+                        <div class="bg-white/5 aspect-video w-full flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-20">Desert Suite</div>
+                        <h3 class="text-4xl font-serif italic">Desert Horizon</h3>
+                        <p class="max-w-md text-sm font-light opacity-60 leading-relaxed">
+                            A sweeping view of the dunes from your private terrace. Minimalist interiors with textured stone walls.
+                        </p>
+                    </div>
+                    <div class="md:col-span-5 md:pt-40 space-y-8">
+                        <div class="bg-white/5 aspect-[4/5] w-full flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-20">Clay Room</div>
+                        <h3 class="text-4xl font-serif italic">Clay Sanctuary</h3>
+                        <p class="text-sm font-light opacity-60 leading-relaxed">
+                            Intimate space carved into the rock. Cool temperatures and soft acoustics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking -->
+        <section id="stay" class="py-60 px-8 text-center bg-oasis-sand">
+            <h2 class="text-[10vw] font-serif italic tracking-tighter leading-none mb-12">Return to Earth.</h2>
+            <div class="flex justify-center">
+                <a href="#" class="bg-oasis-deep text-white px-16 py-6 rounded-full text-[10px] uppercase tracking-[0.6em] font-bold hover:bg-oasis-clay hover:scale-105 transition-all shadow-2xl shadow-oasis-deep/20">
+                    Book Your Escape
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-12 border-t border-oasis-deep/5 flex flex-col md:flex-row justify-between items-center text-[8px] uppercase tracking-[0.5em] opacity-30">
+        <span>Petra, Jordan / 2026</span>
+        <span>© Oasis Retreat Sanctuary</span>
+        <div class="flex gap-12 mt-8 md:mt-0">
+            <a href="#">Instagram</a>
+            <a href="#">Journal</a>
+        </div>
+    </footer>
+</body>
+</html>

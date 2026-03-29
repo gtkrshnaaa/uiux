@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Grain | Sourdough & Craft Baking</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Playfair+Display:ital,wght@1,400;1,900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bakery: {
+                            oat: '#f4ece1',
+                            crust: '#5d4037',
+                            flour: '#ffffff',
+                            wheat: '#d4a373',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bakery-oat text-bakery-crust font-sans selection:bg-bakery-wheat selection:text-white antialiased">
+    <header class="fixed w-full z-50 p-8 flex justify-between items-center bg-bakery-oat/90 backdrop-blur-sm border-b border-bakery-crust/5">
+        <div class="text-xl font-black italic tracking-tighter">Artisan<span class="text-bakery-wheat">Grain</span></div>
+        <nav class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em] font-bold">
+            <a href="#loaves" class="hover:text-bakery-wheat transition-colors">The Loaves</a>
+            <a href="#about" class="hover:text-bakery-wheat transition-colors">Our Grain</a>
+            <a href="#visit" class="hover:text-bakery-wheat transition-colors">Visit</a>
+        </nav>
+        <div class="text-[10px] uppercase tracking-widest font-bold">Cart (0)</div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center px-8 text-center relative overflow-hidden">
+            <div class="absolute -top-[10%] -left-[10%] w-[40vw] h-[40vw] bg-bakery-wheat/10 rounded-full blur-[100px] animate-pulse"></div>
+            
+            <div class="relative z-10 max-w-5xl mx-auto">
+                <p class="text-[10px] uppercase tracking-[0.6em] mb-12 opacity-60">Slow Fermented / Stone Ground</p>
+                <h1 class="text-[10vw] font-serif font-black italic leading-[0.85] tracking-tighter mb-12">
+                    Warmth in every <br> <span class="text-bakery-wheat">Crumb.</span>
+                </h1>
+                <div class="flex flex-col md:flex-row justify-center gap-12 items-center">
+                    <p class="max-w-xs text-sm font-light leading-relaxed opacity-70 text-left border-l-2 border-bakery-wheat pl-6">
+                        Dibuat dengan kesabaran dan bahan organik terbaik. Sourdough kami difermentasi selama 36 jam untuk rasa yang mendalam dan tekstur yang sempurna.
+                    </p>
+                    <a href="#loaves" class="bg-bakery-crust text-white px-12 py-5 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-bakery-wheat transition-all shadow-xl shadow-bakery-crust/20">
+                        Today's Batch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section id="loaves" class="py-40 px-8 bg-white/50">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-end mb-24 border-b border-bakery-crust/10 pb-12">
+                    <h2 class="text-4xl font-serif italic font-black tracking-tighter uppercase">Selected Batch</h2>
+                    <span class="text-[10px] font-bold uppercase tracking-widest opacity-40">Fresh from Oven</span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+                    <div class="space-y-8 group">
+                        <div class="aspect-square bg-bakery-oat rounded-3xl overflow-hidden relative">
+                             <div class="absolute inset-0 flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-10 group-hover:scale-110 transition-transform duration-700">The Signature</div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-3xl font-serif italic font-black">Country Sourdough</h3>
+                            <span class="text-bakery-wheat font-bold">$12</span>
+                        </div>
+                        <p class="text-sm opacity-60 leading-relaxed font-light">
+                            Signature blend of ancient grains with a thick, caramelized crust and soft, airy interior.
+                        </p>
+                    </div>
+                    <div class="space-y-8 group">
+                        <div class="aspect-square bg-bakery-oat rounded-3xl overflow-hidden relative">
+                             <div class="absolute inset-0 flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-10 group-hover:scale-110 transition-transform duration-700">Seed & Grain</div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-3xl font-serif italic font-black">Seeded Loaf</h3>
+                            <span class="text-bakery-wheat font-bold">$14</span>
+                        </div>
+                        <p class="text-sm opacity-60 leading-relaxed font-light">
+                            Packed with toasted pumpkin, flax, and sesame seeds for an earthy, nutty flavor profile.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section id="about" class="py-60 px-8 text-center bg-bakery-crust text-bakery-oat">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-xs uppercase tracking-[0.8em] mb-20 opacity-40">Our Foundation</h2>
+                <p class="text-4xl md:text-6xl font-serif italic leading-[1.2] mb-20 tracking-tighter">
+                    "Kami percaya bahwa roti yang baik membutuhkan waktu, tangan yang telaten, dan rasa hormat terhadap alam."
+                </p>
+                <div class="w-20 h-[1px] bg-bakery-wheat mx-auto"></div>
+            </div>
+        </section>
+
+        <!-- Visit -->
+        <section id="visit" class="py-40 px-8">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                <div class="space-y-12">
+                    <h2 class="text-6xl font-serif italic font-black tracking-tighter leading-none">Come Smell <br>the Freshness.</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-bakery-wheat block mb-2">Location</span>
+                            <p class="text-lg">42 Sourdough Ln. <br>Copenhagen, DK</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-bakery-wheat block mb-2">Hours</span>
+                            <p class="text-lg">Daily: 06:00 — 14:00 <br>Or until sold out.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-bakery-oat aspect-video rounded-3xl flex items-center justify-center text-[8px] uppercase tracking-[1em] opacity-10">Map View</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-12 text-center text-[10px] uppercase tracking-[0.5em] opacity-30">
+        © 2026 Artisan Grain Bakery / Handcrafted Daily
+    </footer>
+</body>
+</html>
