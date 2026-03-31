@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Menu | Bean & Bloom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { serene: { cream: '#fdfcf8', sage: '#e2e7d6', clay: '#d4a373', ink: '#2a2a2a' } }, fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] } } } }
+    </script>
+</head>
+<body class="bg-serene-cream text-serene-ink font-sans">
+    <header class="p-12 flex justify-between items-start">
+        <a href="../index.html" class="text-xl font-serif italic">Bean & Bloom</a>
+        <nav class="flex gap-8 text-[10px] uppercase tracking-widest opacity-40">
+            <a href="index.html">Main Menu</a>
+        </nav>
+    </header>
+    <main class="max-w-4xl mx-auto px-8 py-20">
+        <span class="text-[10px] uppercase tracking-[0.6em] text-serene-clay mb-8 block">Spring 2026</span>
+        <h1 class="text-6xl font-light mb-12">The <span class="font-serif italic text-serene-clay">Seasonal</span> Edit.</h1>
+        <div class="space-y-12">
+            <div class="p-12 bg-serene-sage/10 rounded-3xl border border-serene-clay/10">
+                <h3 class="text-3xl font-serif italic mb-4">Lavender Fog</h3>
+                <p class="text-lg font-light opacity-60">Early grey tea, steamed milk, house-made lavender syrup, dried botanicals.</p>
+                <p class="mt-6 font-semibold text-serene-clay">$7.0</p>
+            </div>
+            <div class="p-12 bg-serene-sage/10 rounded-3xl border border-serene-clay/10">
+                <h3 class="text-3xl font-serif italic mb-4">Rosemary Honey Latte</h3>
+                <p class="text-lg font-light opacity-60">Bloom espresso, wild honey, fresh rosemary sprig, oat milk.</p>
+                <p class="mt-6 font-semibold text-serene-clay">$7.5</p>
+            </div>
+        </div>
+    </main>
+    <footer class="p-12 text-center text-[10px] uppercase tracking-widest opacity-40">
+        &copy; 2026 Bean & Bloom
+    </footer>
+</body>
+</html>

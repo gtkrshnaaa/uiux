@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Flagship | Bean & Bloom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { serene: { cream: '#fdfcf8', sage: '#e2e7d6', clay: '#d4a373', ink: '#2a2a2a' } }, fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] } } } }
+    </script>
+</head>
+<body class="bg-serene-cream text-serene-ink font-sans">
+    <header class="p-12 flex justify-between items-start">
+        <a href="../index.html" class="text-xl font-serif italic">Bean & Bloom</a>
+        <nav class="flex gap-8 text-[10px] uppercase tracking-widest opacity-40">
+            <a href="index.html">All Locations</a>
+        </nav>
+    </header>
+    <main class="max-w-6xl mx-auto px-8 py-20">
+        <span class="text-[10px] uppercase tracking-[0.6em] text-serene-clay mb-8 block">Flagship</span>
+        <h1 class="text-6xl md:text-8xl font-light mb-20">West Street <br><span class="font-serif italic text-serene-clay">Sanctuary</span>.</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div class="aspect-[4/5] bg-serene-sage/10 rounded-3xl"></div>
+            <div class="space-y-12 flex flex-col justify-center">
+                <p class="text-2xl font-light leading-relaxed">Located in the heart of Manhattan, our flagship store is a multi-level space designed for deep focus and quiet conversation.</p>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Features</h3>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li>— Dedicated Quiet Zones</li>
+                        <li>— Private Tasting Room</li>
+                        <li>— Outdoor Garden Terrace</li>
+                        <li>— Full Kitchen Menu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="p-12 text-center text-[10px] uppercase tracking-widest opacity-40">
+        &copy; 2026 Bean & Bloom
+    </footer>
+</body>
+</html>

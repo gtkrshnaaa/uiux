@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uptown Studio | Bean & Bloom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { serene: { cream: '#fdfcf8', sage: '#e2e7d6', clay: '#d4a373', ink: '#2a2a2a' } }, fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] } } } }
+    </script>
+</head>
+<body class="bg-serene-cream text-serene-ink font-sans">
+    <header class="p-12 flex justify-between items-start">
+        <a href="../index.html" class="text-xl font-serif italic">Bean & Bloom</a>
+        <nav class="flex gap-8 text-[10px] uppercase tracking-widest opacity-40">
+            <a href="index.html">All Locations</a>
+        </nav>
+    </header>
+    <main class="max-w-6xl mx-auto px-8 py-20">
+        <span class="text-[10px] uppercase tracking-[0.6em] text-serene-clay mb-8 block">Studio</span>
+        <h1 class="text-6xl md:text-8xl font-light mb-20">Greenpoint <br><span class="font-serif italic text-serene-clay">Studio</span>.</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div class="aspect-[4/5] bg-serene-sage/10 rounded-3xl"></div>
+            <div class="space-y-12 flex flex-col justify-center">
+                <p class="text-2xl font-light leading-relaxed">Our Brooklyn studio is an open, light-filled space that serves as our roasting headquarters and experimental laboratory.</p>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Features</h3>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li>— View of the Roastery</li>
+                        <li>— Weekly Public Cuppings</li>
+                        <li>— Espresso Training Lab</li>
+                        <li>— Minimalist Reading Nook</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="p-12 text-center text-[10px] uppercase tracking-widest opacity-40">
+        &copy; 2026 Bean & Bloom
+    </footer>
+</body>
+</html>
